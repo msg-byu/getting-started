@@ -21,24 +21,6 @@ scientific code.
 
 [Your First Python Code](#your-first-python-code)
 
-
-[How Can I Contribute](#how-can-i-contribute)
-  * [Reporting Bugs](#reporting-bugs)
-  * [Suggesting Enhancements](#suggesting-enhancements)
-  * [Places to Start](#places-to-start)
-  * [Testing](#testing)
-  * [Pull Requests](#pull-requests)
-
-[Styleguides](#styleguides)
-  * [Git Commit Messages](#git-commit-messages)
-  * [History Messages](#history-messages)
-  * [Python Styleguide](#python-styleguide)
-  * [Documentation Styleguide](#documentation-styleguide)
-
-[Additional Notes](#additional-notes)
-  * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
-  * [Attribution](#attribution)
-
 ## The Goal
 
 If you have yet to do so you should contact [Dr. Gus
@@ -78,5 +60,5 @@ ensure the code behaves as we expect.
 ### Python Packages
 
 To setup your python package follew the instrutions found
-[here](instructions/python_package.md).
+[here](instructions/python_packages.md).
 

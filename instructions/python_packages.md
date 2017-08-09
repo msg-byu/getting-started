@@ -9,24 +9,6 @@
 
 [Your First Python Code](#your-first-python-code)
 
-
-[How Can I Contribute](#how-can-i-contribute)
-  * [Reporting Bugs](#reporting-bugs)
-  * [Suggesting Enhancements](#suggesting-enhancements)
-  * [Places to Start](#places-to-start)
-  * [Testing](#testing)
-  * [Pull Requests](#pull-requests)
-
-[Styleguides](#styleguides)
-  * [Git Commit Messages](#git-commit-messages)
-  * [History Messages](#history-messages)
-  * [Python Styleguide](#python-styleguide)
-  * [Documentation Styleguide](#documentation-styleguide)
-
-[Additional Notes](#additional-notes)
-  * [Issue and Pull Request Labels](#issue-and-pull-request-labels)
-  * [Attribution](#attribution)
-
 ## Introduction
 
 Python packages are the work horses of python. They are what allow
