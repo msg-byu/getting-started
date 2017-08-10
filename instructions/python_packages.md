@@ -19,7 +19,7 @@ another user to easily make use of your code. For example type:
 pip install numpy
 ```
 
-in your terminal window. This simple command installs the python
+in your docker terminal. This simple command installs the python
 package called numpy which contains almost every numerical tool you
 will ever need when you program. You can now access the numpy tools
 simply by using:
@@ -290,9 +290,27 @@ inside of three quotes in this functions is
 later.
 
 Now that we have some code to test with we can install our package and
-insure that it functions properly. In your terminal navigate to where
-your setup.py file is, then enter the commands (replace demo with your
-package name:
+insure that it functions properly. First we need to copy all our code
+to our docker container. To do this you need your docker container
+running in one terminal while you use another to copy files to it. If
+your docker container is not running then use:
+
+```
+docker run --name demo --rm -i -t wsmorgan/python bash
+```
+
+to get it going. Then in your other terminal use navigate to the
+folder your git repository is in and use:
+
+```
+docker cp 'git_repo' demo:.
+```
+
+(where 'git_repo' is the repository file) to copy the repository into
+the docker container. Now go back to the terminal that you used
+`docker run` in and type `ls`. You should now see your git
+repository. Now navigate into the folder `cd 'git_repo'` then enter
+the commands (replace demo with your package name):
 
 ```
 pip install -e .

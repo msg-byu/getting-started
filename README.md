@@ -1,4 +1,4 @@
-# getting-started
+# Getting Started
 
 A guide to getting started in the Materials Simulation Group (MSG)
 with python, travis, sphinx, github and general scientific computing.
@@ -29,7 +29,9 @@ ask him for problems to work through.
 
 Your task, once you have your assigned problems, is to code them up as
 a python package with a full suite of [unit
-tests](https://en.wikipedia.org/wiki/Unit_testing), 100% [test
+tests](https://en.wikipedia.org/wiki/Unit_testing) on a [continuous
+integration](https://en.wikipedia.org/wiki/Continuous_integration)
+(CI) server, 100% [test
 coverage](https://en.wikipedia.org/wiki/Code_coverage), and [API
 documentation](https://en.wikipedia.org/wiki/Application_programming_interface). If
 you don't know what any of these things mean feel free to follow the
@@ -44,11 +46,104 @@ a repo that will look somewhat similar to this one when you are done.
 
 ### Github
 
+Before we do anything on your local computer you need to get a github
+account. Go to [github](https://github.com/) and click sign up for
+Github, create your user name and password and your all set. Most, if
+not all, of the code you write as part of this group will be
+maintained on github so learning git will be an important in your
+development.
 
+Once you have logged into github create a new repository by clicking
+on the plus sign on the top right of the window and clicking on 'Now
+repository' from the dropdown menu. You now need to give the
+repository a name, you can give it any name you like but I would
+recomend something related to the exercise you've been given by
+Dr. Hart. You should also give it a description, again whatever you
+like but it should reflect what the code you are going to write will
+do. Ensure that the Public option is checked and check the box next to
+`Initialize this repository with a README'.
+
+Before you click 'Create repository' you should also select the
+'Python' option from the 'Add .gitignore' dropdown menu and select a
+[license](https://choosealicense.com/) (I recommend the MIT license
+for most purposes) from the 'Add a license' dropdown menu. The
+.gitignore file tells git which files to automacially ignore when
+adding files from your local machine to the github repository. The
+license lets other people know how they are allowed to use your code.
+
+Once you've entered values into all the fields you can push `Create
+repository'. This repository is where you will store all the code you
+create for the exercise you have been assigned. We will now copy this
+repository to your local machine so you can add to it. Open your
+terminal, or command prompt/[Cygwin](https://www.cygwin.com/) for
+windows, and use the `cd` command to move to a place on your system
+that you want to store your code (I would recommend making a seperate
+directory for all your codes called codes).
+
+Once you are in the desired location click the green 'Clone or
+download' button and copy the address it shows you. Then in the
+terminal type:
+
+```
+git clone (past what you copied from github here)
+```
+
+this will clone the repository to your local machine. Now use:
+
+```
+cd git_repo
+```
+
+to navigate into the newly created folder.
 
 ### Python
 
-In this group we do most of our work through the terminal
+In this group we write most of our code in
+[python](https://www.python.org/), if we need it to be faster then we
+prototype it in python and then code it in
+[fortran](https://en.wikipedia.org/wiki/Fortran). That being said we
+execute most of our code from the terminal, to fit into the group with
+ease you should also be making use of the terminal. If you are a
+Windows or linux user we strongly recommend you get
+[docker](https://www.docker.com/) for this reason (we are sick of
+trying to make code work on windows and linux machines). If you are a
+mac user all you need is to ensure that you have python installed on
+your machine, however, you should still get
+[docker](https://www.docker.com/).
+
+Once you have docker go to your terminal, or the docker terminal and
+pull our python docker image using the following:
+
+```
+docker pull wsmorgan/python
+```
+
+This image has working copies of python 2.7, 3.4, 3.5, and 3.6. You
+are welcome to develop in any of them. To access the image use:
+
+```
+docker run --name 'name' --rm -i -t wsmorgan/python bash
+```
+
+Where the 'name' variable has be replaced by a name you'll remember
+(for the rest of the walk through the name I will be using is
+demo). This command creates a docker container with the name you
+specify and opens an interactive bash terminal of the docker
+image. The '--rm' flag means that when you exit the interactive
+terminal the container will also be deleted. We will be using this
+docker image through out the rest of this tutorial to run and test any
+code you write. You can even develop your code from this container,
+however, keep in mind that when you exit the container will be deleted
+and any code you haven't pushed to github will be lost (even without
+the '--rm' flag in the command you risk losing any code you wrote
+while in the container). I will assume that you will be producing code
+on your machine and that we will be transfering it to the container
+when tests need to be run.
+
+In the future, if you are writing a script that will be useful to
+others, you may want to consider [creating your own docker
+image](https://docs.docker.com/engine/userguide/eng-image/dockerfile_best-practices/#build-cache)
+with your scripts built into it.
 
 ## Your First Python Code
 
