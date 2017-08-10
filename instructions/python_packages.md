@@ -5,8 +5,8 @@
 [Introduction](#introduction)
 
 [Setting up Your Package](#setting-up-your-package)
-  * [Setup.cfg](#setup.cfg)
-  * [Setup.py](#setup.py)
+  * [Setup.cfg](#setupcfg)
+  * [Setup.py](#setuppy)
   
 [Testing Your Package](#testing-your-package)
 
