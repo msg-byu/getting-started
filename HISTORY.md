@@ -1,5 +1,9 @@
 # Revision History for getting started.
 
+## Revision 0.0.3
+- Finished instructions/python_packages.md
+- Added demo/trial.py.
+
 ## Revision 0.0.2
 - Added setup.py and setup.cfg to the repo.
 - Added the demo python package folder.

@@ -59,6 +59,6 @@ ensure the code behaves as we expect.
 
 ### Python Packages
 
-To setup your python package follew the instrutions found
+To setup your python package follow the instrutions found
 [here](instructions/python_packages.md).
 
