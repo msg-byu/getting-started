@@ -7,7 +7,7 @@ What follows is meant to be an introduction to the tools you skills
 you need to be an effective member of the MSG group and become a good
 programmer. Most of the things is this guide you will be able to
 modify and adapt to fit your own circumstances once you get familiar
-with the tools. However, the ideas behind the overall workflow and
+with the tools. However, the ideas behind the overall work flow and
 design process are not optional as they are the keys to writing good
 scientific code.
 
@@ -36,11 +36,12 @@ coverage](https://en.wikipedia.org/wiki/Code_coverage), and [API
 documentation](https://en.wikipedia.org/wiki/Application_programming_interface). If
 you don't know what any of these things mean feel free to follow the
 links, or sit tight. They should become clear as we cover each topic
-in this walkthrough.
+in this walk through.
 
 In addition you will be putting your code up on
 [GitHub](https://github.com/) and learning the basics of git to create
-a repo that will look somewhat similar to this one when you are done.
+a repository that will look somewhat similar to this one when you are
+done.
 
 ## Computer Setup
 
@@ -91,7 +92,7 @@ however, keep in mind that when you exit the container will be deleted
 and any code you have not pushed to GitHub will be lost (even without
 the '--rm' flag in the command you risk losing any code you wrote
 while in the container). I will assume that you will be producing code
-on your machine and that we will be transfering it to the container
+on your machine and that we will be transferring it to the container
 when tests need to be run.
 
 In the future, if you are writing a script that will be useful to
@@ -108,6 +109,6 @@ ensure the code behaves as we expect.
 
 ### Python Packages
 
-To setup your python package follow the instrutions found
+To setup your python package follow the instructions found
 [here](instructions/python_packages.md).
 
