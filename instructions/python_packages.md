@@ -137,7 +137,7 @@ url=''
 ```
 
 Here you should place the link to your github repository for this
-project, i.e., 'https://github.com/"your github user name"/"your github
+project, i.e., 'github.com/"your github user name"/"your github
 repository for this project"'.
 
 ```
