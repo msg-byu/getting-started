@@ -181,7 +181,7 @@ you may need to include multiple packages, for an example of this see
 
 ```
 # scripts=['']
-``
+```
 
 This is another field that you can ignore for now but should be aware
 of. Any scripts, i.e., command line executable programs, you place in
