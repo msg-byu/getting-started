@@ -6,9 +6,9 @@
 
 [Create a Repository](#create-a-repository)
   
-[Branches and Code Stability](#braches-and-code-stability)
+[Branches and Code Stability](#branches-and-code-stability)
 
-[Cloning Repositories](cloninig-repositories)
+[Cloning Repositories](#cloninig-repositories)
 
 ## Introduction
 
