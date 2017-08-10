@@ -69,7 +69,7 @@ coverage from the unit tests. The first two lines establish an alias
 for pytest, the lines between `[coverage:report]` and `[coverage:run]`
 tell the unit testing package what to ignore or exclude from coverage
 reports. We'll talk more about this later when discussing [code
-coverage](). The last portion, under `[coverage:run]`, lets the unit
+coverage](coverage.md). The last portion, under `[coverage:run]`, lets the unit
 testing software know if there are any modules that should be excluded
 from a coverage report entirely. For now, and in most cases, you will
 leave this blank. If you want to know more about building the
@@ -137,8 +137,8 @@ url=''
 ```
 
 Here you should place the link to your github repository for this
-project, i.e., https://github.com/`your github user name'/'your github
-repository for this project'.
+project, i.e., 'https://github.com/"your github user name"/"your github
+repository for this project"'.
 
 ```
 license=''
