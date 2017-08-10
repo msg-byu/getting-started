@@ -106,3 +106,6 @@ git checkout dev
 
 We are now working on the dev branch and anything we commit will be
 pushed to dev instead of master creating a stable code base.
+
+You are now ready to return to the remainder of the walkthrogh found
+[here](../README.md#python).
