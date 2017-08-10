@@ -1,7 +1,7 @@
 # Getting Started
 
 A guide to getting started in the Materials Simulation Group (MSG)
-with python, travis, sphinx, github and general scientific computing.
+with python, travis, sphinx, GitHub and general scientific computing.
 
 What follows is meant to be an introduction to the tools you skills
 you need to be an effective member of the MSG group and become a good
@@ -39,14 +39,14 @@ links, or sit tight. They should become clear as we cover each topic
 in this walkthrough.
 
 In addition you will be putting your code up on
-[github](https://github.com/) and learning the basics of git to create
+[GitHub](https://github.com/) and learning the basics of git to create
 a repo that will look somewhat similar to this one when you are done.
 
 ## Computer Setup
 
 ### Github
 
-Before we do anything on your local computer you need to get a github
+Before we do anything on your local computer you need to get a GitHub
 account and make a repository. The directions
 [here](instructions/github.md) will walk you through the process.
 
@@ -88,7 +88,7 @@ terminal the container will also be deleted. We will be using this
 docker image through out the rest of this tutorial to run and test any
 code you write. You can even develop your code from this container,
 however, keep in mind that when you exit the container will be deleted
-and any code you haven't pushed to github will be lost (even without
+and any code you have not pushed to GitHub will be lost (even without
 the '--rm' flag in the command you risk losing any code you wrote
 while in the container). I will assume that you will be producing code
 on your machine and that we will be transfering it to the container

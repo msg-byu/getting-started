@@ -109,7 +109,7 @@ patch revisions are small changes to the code to fix issues and
 enhance performance. For more information on semantic versioning you
 may read [this article](http://semver.org/).
 
-Anytime you change and commit your code to github you should increment
+Anytime you change and commit your code to GitHub you should increment
 the code version in the appropriate field. Since this is the initial
 version of a new code use `0.0.1` for your current version.
 
@@ -136,8 +136,8 @@ Your email address goes here.
 url=''
 ```
 
-Here you should place the link to your github repository for this
-project, i.e., 'github.com/"your github user name"/"your github
+Here you should place the link to your GitHub repository for this
+project, i.e., 'github.com/"your GitHub user name"/"your GitHub
 repository for this project"'.
 
 ```
@@ -145,7 +145,7 @@ license=''
 ```
 
 Here you will place the title of the license you've placed in your
-github repository for this package. (We usually use MIT but whichever
+GitHub repository for this package. (We usually use MIT but whichever
 you choose is fine).
 
 ```
