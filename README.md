@@ -26,7 +26,13 @@ even if you are already familiar with the concepts.
 
 [Computer Setup](#computer-setup)
   * [Github](#github)
+    * [Introduction to GitHub](instructions/github.md#introduction)
+    * [Create a Repository](instructions/github.md#create-a-repository)
+    * [Braches and Code Stability](instructions/github.md#branches-and-code-stability)
+    * [Cloning Repositories](instructions/github.md#cloning-repositories)
+    
   * [Python](#python)
+    * [Docker](#docker)
 
 [Your First Python Code](#your-first-python-code)
   * [Python Packages](#python-packages)
@@ -95,6 +101,8 @@ trying to make code work on windows and linux machines). If you are a
 mac user all you need is to ensure that you have python installed on
 your machine, however, you should still get
 [docker](https://www.docker.com/).
+
+#### Docker
 
 Once you have docker go to your terminal, or the docker terminal and
 pull our python docker image using the following:
