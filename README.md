@@ -17,6 +17,9 @@ the small amounts of found here code it is highly recommended that you
 write it yourself to get practice instead of just copying the existing
 files.
 
+We also recommend that you not skip any sections in this walk through,
+even if you are already familiar with the concepts.
+
 #### Table of Contents
 
 [The Goal of this Repository](#the-goal)
