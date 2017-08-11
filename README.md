@@ -1,7 +1,7 @@
 # Getting Started
 
 A guide to getting started in the Materials Simulation Group (MSG)
-with python, travis, sphinx, GitHub and general scientific computing.
+with python, Travis CI, Sphinx, GitHub and general scientific computing.
 
 What follows is meant to be an introduction to the tools you skills
 you need to be an effective member of the MSG group and become a good
@@ -10,6 +10,12 @@ modify and adapt to fit your own circumstances once you get familiar
 with the tools. However, the ideas behind the overall work flow and
 design process are not optional as they are the keys to writing good
 scientific code.
+
+This repository contains sample code and input files that you can use
+as templates for your own project, however, when it comes to writing
+the small amounts of found here code it is highly recommended that you
+write it yourself to get practice instead of just copying the existing
+files.
 
 #### Table of Contents
 
@@ -111,4 +117,23 @@ ensure the code behaves as we expect.
 
 To setup your python package follow the instructions found
 [here](instructions/python_packages.md).
+
+### Your First Code 
+
+Technically you've already written your first python code during the
+process of making and testing your [python
+package](instructions/python_packages.md#testing-your-package). We
+will briefly go over the contents of that code here and write a unit
+tests for it. Then write your second python code and demonstrate what
+is called [test-driven
+development](https://en.wikipedia.org/wiki/Test-driven_development)
+(TDD).
+
+The remaining instructions for this section can be found
+[here](instructions/first_code.md).
+
+## Continuous Integration, Code Coverage, and Quality
+
+## API Documentation
+
 

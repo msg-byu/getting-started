@@ -1,5 +1,10 @@
 # Revision History for getting started.
 
+## Revision 0.0.4
+- Finished instructions/first_code.md
+- Added tests/test_demo.py.
+- Added the factorial function to demo/trial.py.
+
 ## Revision 0.0.3
 - Finished instructions/python_packages.md
 - Added demo/trial.py.

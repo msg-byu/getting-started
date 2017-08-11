@@ -47,7 +47,11 @@ without spaces, you don't have to follow these conventions but it's a
 good idea to keep them in mind in case you do submit a your package to
 pypi. In the [sample
 repository](https://github.com/msg-byu/getting-started) the package
-name is 'demo'.
+name is 'demo' so the command would be:
+
+```
+mkdir demo
+```
 
 Once you've chosen a package name and created the folder you will need
 to create a [setup.py](../setup.py) and
@@ -246,12 +250,12 @@ setup(name='demo',
 At this point you should have a file structure that looks like:
 
 ```
-git_repo/package/__init__.py
-git_repo/setup.py
-git_repo/setup.cfg
-git_repo/README.md
-git_repo/LICENSE
-git_repo/.gitignore
+'git_repo'/'package'/__init__.py
+'git_repo'/setup.py
+'git_repo'/setup.cfg
+'git_repo'/README.md
+'git_repo'/LICENSE
+'git_repo'/.gitignore
 ```
 
 In order to do anything with this package we need to include some
@@ -259,7 +263,7 @@ python code. To ensure that everything is working we'll make a test
 script, [trial.py](../demo/trial.py), located in the package folder:
 
 ```
-git_repo/package/trial.py
+'git_repo'/'package'/trial.py
 ```
 
 In the sample repository this code is located at:
@@ -284,10 +288,10 @@ def square(x):
     return x**2
 ```
 
-Here we have defined a subroutine that squares a given value. The text
+Here we have defined a function that squares a given value. The text
 inside of three quotes in this functions is
-[documentation](sphinx_documentation) which we go into in more detail
-later.
+[documentation](../README.md#your-first-code) which we go into in more
+detail later.
 
 Now that we have some code to test with we can install our package and
 insure that it functions properly. First we need to copy all our code
@@ -333,4 +337,4 @@ is now the live version of your code on your machine. Any changes you
 make will effect the output immediately.
 
 You have now successfully created your first python package. Please
-return to the main [walk through](../README.md).
+return to the main [walk through](../README.md#your-first-code).

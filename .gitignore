@@ -29,6 +29,7 @@ var/
 .installed.cfg
 *.egg
 .python-version
+*.eggs
 
 # Installer logs
 pip-log.txt
