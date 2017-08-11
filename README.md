@@ -27,12 +27,26 @@ files.
 
 [Your First Python Code](#your-first-python-code)
   * [Python Packages](#python-packages)
-    * [Introduction to Python Packages](#instructions/python_packages.md#introduction)
-    * [Setting Up Your Package](#instructions/python_packages.md#setting-up-your-package)
-      * [Setup.cfg](#setupcfg)
-      * [Setup.py](#setuppy)
-    * [Testing Your Package](#instructions/python_packages.md#testing-your-package)
+    * [Introduction to Python Packages](instructions/python_packages.md#introduction)
+    * [Setting Up Your Package](instructions/python_packages.md#setting-up-your-package)
+      * [Setup.cfg](instructions/python_packages.md#setupcfg)
+      * [Setup.py](instructions/python_packages.md#setuppy)
+      
+    * [Testing Your Package](instructions/python_packages.md#testing-your-package)
+    
   * [Your First Code](#your-first-code)
+    * [Code Documentation](instructions/first_code.md#code-review-and-documentation)
+    * [Writing unit-tests](instructions/first_code.md#writing-unit-tests)
+    * [Tox](instructions/first_code.md#tox)
+    * [Test-driven Development](instructions/first_code.md#tests-driven-development)
+      * [Your Second Function](instructions/first_code.md#your-second-function)
+      * [Test, Fix, Repeat](instructions/first_code.md#test-fix-repeat)
+      
+    * [Test-driven Workflow](instructions/first_code.md#overview)
+
+[Continuous Integration, Code Coverage, and Quality](#continuous-integration-code-coverage-and-quality)
+
+[API Documentation](#api-documentation)
 
 ## The Goal
 
