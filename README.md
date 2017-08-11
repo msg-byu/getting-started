@@ -26,6 +26,13 @@ files.
   * [Python](#python)
 
 [Your First Python Code](#your-first-python-code)
+  * [Python Packages](#python-packages)
+    * [Introduction to Python Packages](#instructions/python_packages.md#introduction)
+    * [Setting Up Your Package](#instructions/python_packages.md#setting-up-your-package)
+      * [Setup.cfg](#setupcfg)
+      * [Setup.py](#setuppy)
+    * [Testing Your Package](#instructions/python_packages.md#testing-your-package)
+  * [Your First Code](#your-first-code)
 
 ## The Goal
 

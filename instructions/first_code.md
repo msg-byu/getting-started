@@ -145,7 +145,7 @@ what to do. Go back up a directory to where setup.py is:
 cd ../
 ```
 
-Here we will make a file called [tox.ini](tox.ini) as sample of which
+Here we will make a file called [tox.ini](../tox.ini) as sample of which
 can be found in the getting_started repository (or by following the
 link). The example file looks like this:
 
