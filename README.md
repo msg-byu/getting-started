@@ -54,8 +54,16 @@ even if you are already familiar with the concepts.
     * [Test-driven Workflow](instructions/first_code.md#overview)
 
 [Continuous Integration, Code Coverage, and Quality](#continuous-integration-code-coverage-and-quality)
-
+  * [Continuous Integration, Travis CI](#continuous-integration-travis-ci)
+    * [Build Status Badge](#build-status-badge)
+  * [Code Coverage, Codecov](#code-coverage-codecov)
+    * [CodeCov Badge](#codecov-badge)
+  * [Code Quality, Landscape](#code-quality-landscape)
+    * [Code Quality Badge](#code-quality-badge)
+    
 [API Documentation](#api-documentation)
+
+[HISTORY.md and your First Commit](#historymd-and-your-first-commit)
 
 ## The Goal
 
@@ -166,6 +174,221 @@ The remaining instructions for this section can be found
 
 ## Continuous Integration, Code Coverage, and Quality
 
+Now that you have a working code base we want to ensure that it
+doesn't get messed up as you continue to develop and other people
+start to contribute to your project. One way to ensure that new code
+revisions don't break your codes functionality is Continuous
+Integration (CI). The idea is that every time anyone pushes to your
+git repository or submits a pull request the CI service will run all your
+unit tests and let you know if they still pass. The CI provider I'll
+cover here is called [Travis CI](https://travis-ci.org/).
+
+### Continuous Integration, Travis CI
+
+The first thing you need to do is enable Travis CI to monitor your git
+repository and run unit tests when it detects a change. To do that go
+to: [https://travis-ci.org/](https://travis-ci.org/) and click on the
+'Sign in with GitHub' or 'Sign up' buttons (either will have the same
+effect. Once logged in the server should automatically start linking
+with GitHub and listing your repositories, if it doesn't go up to your
+name in the top right corner and click on the accounts option that
+pops down.
+
+Once your account has synced with GitHub you should see the repository
+you created at the start of this project with grey box and `x` in a
+square next to it. Click that box, it will turn blue and, the `x` will
+turn into a check and viola, you've enabled Travis CI to monitor and
+run the unit tests on your repository.
+
+Now we just need to make sure Travis CI knows what to do when it's
+running those tests. This is accomplished via the
+[.travis.yml](.travis.yml) file. The .travis.yml file should look like:
+
+```
+language: python
+python:
+  - "2.7"
+  - "3.4"
+# command to install dependencies
+install:
+  - pip install .
+  - pip install tox
+# command to run tests
+script: tox  
+```
+
+The first line of the file tells Travis CI that the programming
+language in use is python. Then the lines:
+
+```
+python:
+  - "2.7"
+  - "3.4"
+```
+
+Inform Travis CI that you will be performing tests in the python 2.7
+and 3.4 environments, if these are not the python versions you want
+Travis CI to run tests in then modify these lines to reflect the
+python versions you are testing your code in. The next lines tell
+Travis CI what it needs to install to run your tests:
+
+```
+install:
+  - pip install .
+  - pip install tox
+```
+
+The `pip install .` says to install the local python package once its
+been pulled to the server. Then Travis CI is told it needs to install
+tox to run the tests (`pip install tox`). This format assumes that
+everything your package, and its unit-tests, need to run are included
+in your [setup.py](instructions/python_packages.md#setuppy) file. If
+this is not the case you will need to list any additional dependencies
+for your package in a another file, usually called
+`requirements.txt`. The `requirements.txt` file lists each additional
+python package needed for your package, or its tests, on a separate
+line. For example, if your package needs numpy and scipy, and they
+aren't listed in your setup.py, then your `requirements.txt` file
+would look like:
+
+```
+numpy
+scipy
+```
+
+With this file in existence you will also need to add this line:
+
+```
+  - pip install -r requirements.txt
+```
+
+to your .travis.yml after ` - pip install tox`. The last line in the
+.travis.yml file tells Travis CI what commands to run in order to
+perform the unit-tests:
+
+```
+script: tox
+```
+
+Since our tests are being performed by tox we're done. If you want to
+use something other than tox, like pytest for example, then you would
+replace tox with pytest.
+
+#### Build Status Badge
+
+To get the build status badge, which tells users if your code passes
+your unit tests, on your README go to travisci.org then select your
+repository from the list. Then next your repository name, in the
+middle of the screen, you will see the word `build` in a black box
+with another box next to it, click on the word build. A pop-up will
+open, from the second drop-down menu select Markdown then copy the text
+in the box at the bottom of the pop-up. Past that text to the top of
+your README.
+
+### Code Coverage, Codecov
+
+Code coverage is a report of how many lines of code your unit-tests
+cover. Your goal is to have 100% code coverage for any code you
+write. There is a caveat to this idea, there are times when you will
+write code that Travis CI cannot test, for example:
+
+```
+    def _run_from_ipython(self):
+        try: #pragma: no cover
+            __IPYTHON__
+            self._in_ipython  = True
+        except NameError:
+            self._in_ipython = False
+```
+
+The above function tests to see if the user is executing the code from
+an interactive python notebook. Since our unit tests don't run from an
+interactive notebook this code will never be executed by the tests. In
+this case we can use the comment `#pragma: no cover` as a comment
+after the first line of the loop or conditional that won't be
+tested. If you recall this same line appeared in our
+[setup.cfg](instructions/python_packages.md#setuppy) file under the
+`[coverage:report]` section. That is because the `[coverage:report]`
+section of setup.cfg tells coverage, a python package that writes code
+coverage reports, which things it should ignore. As you may also
+recall `raise AssertionError' and `raise NotImplementedError` were
+also excluded from coverage. Ultimately this ability to have code be
+ignored for a coverage report should be used sparingly and only when
+you have extremely good reason (it is also a good idea to state the
+reason as a comment in the code).
+
+To make the reports produced by coverage easier to read we're going to
+use a service called [CodeCov](https://codecov.io/). Go to
+[https://codecov.io/](https://codecov.io/) and click `Sign up` then
+`sign up with GihHub`. Once inside navigate your way to your
+repositories list, it should be empty, then click `Add new
+repository'. A list of all your repositories should appear, click on
+the repository you made for this project and a 2 step process will
+appear on the screen. Step one will have a token for you to copy, go
+ahead and copy it, you can follow the link of examples in for
+uploading the reports but since I'm about to tell you how to do that
+it's completely optional. Now go to your `tox.ini` file and add the
+following to the bottom of the file:
+
+```
+    codecov --token='past your token here'
+```
+
+That's it. With that last line added Travis CI will now send your
+coverage report to CodeCov after each unit tests it runs.
+
+When CodeCov generates a coverage report it tells you the total amount
+of your code that was hit by unit-tests, gives a breakdown of the
+coverage of each file and will even go through the code line by line
+and highlight in red the lines that you have missed.
+
+#### CodeCov Badge
+
+To add the CodeCov badge to your README go to your repository on
+codecov.io then click on settings. On the left you'll see a `Badge`
+option, click on it then copy the text under `Markdown`. Paste that
+text to the top of your README.md right after the build status badge.
+
+### Code Quality, Landscape
+
+The last issue to be concerned with now that our code will be run
+through a CI server and we'll be receiving coverage reports is if our
+code is good quality. In other words, does our code follow standard
+style guidelines, does it have any sections that are likely to break or
+introduce bugs, is it easily readable.... Being able to produce good
+quality code will often set you apart as a programmer. There are a
+number of sites that perform code quality checks but we're going to
+talk about how to use only one of them,
+[Landscape](https://landscape.io/). Go to
+[https://landscape.io/](https://landscape.io/) and click `Sign in with
+GitHub`. On the next screen click `+ Add Repository` then from the
+list of your repositories select the repository you created for this
+project then click `Add Repositories` at the bottom of the page.
+
+Just like Travis CI, Landscape will monitor your repository and run
+checks of your code quality every time you push to GitHub. You can
+then review the reports it generates and make improvements as you go.
+Down the road, as you grow as a programmer, you may find that
+Landscape will throw errors about code you know to be fine, in such
+cases you should read up on the
+[.landscape.yml](https://docs.landscape.io/configuration.html) file
+and use it to refine the checks Landscape is performing.
+
+#### Code Quality Badge
+
+To get the code quality badge to appear on your README go to
+Landscapes Dashboard then click on the repository. There will be a
+grey box that says `health unknown` in the upper write of the
+screen. Click on it, a list of options will appear for style, pick one
+you like then go to where you see `Markdown` copy the text below and
+paste it to the top of your README.md file right after the text for
+the code coverage and build.
+
 ## API Documentation
+
+## HISTORY.md and Your First Commit
+
+Now that you have code, unit-tests, and instructions for Travis CI we
+are almost ready to make your first commit to GitHub.
 
 
