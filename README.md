@@ -62,6 +62,8 @@ even if you are already familiar with the concepts.
     * [Code Quality Badge](#code-quality-badge)
     
 [API Documentation](#api-documentation)
+  * [Sphinx](#sphinx)
+  * [GitHub Pages](#github-pages)
 
 [HISTORY.md and your First Commit](#historymd-and-your-first-commit)
 
@@ -307,7 +309,7 @@ interactive notebook this code will never be executed by the tests. In
 this case we can use the comment `#pragma: no cover` as a comment
 after the first line of the loop or conditional that won't be
 tested. If you recall this same line appeared in our
-[setup.cfg](instructions/python_packages.md#setuppy) file under the
+[setup.cfg](instructions/python_packages.md#setupcfg) file under the
 `[coverage:report]` section. That is because the `[coverage:report]`
 section of setup.cfg tells coverage, a python package that writes code
 coverage reports, which things it should ignore. As you may also
@@ -391,7 +393,7 @@ describes to users of your code base how it works and gives examples
 of code usage. If you've been following the instructions in this walk
 through then you've already got documentation built into your python
 code. If not then go back to [Code
-Documentation](#instructions/first_code.md#code-review-and-documentation)
+Documentation](instructions/first_code.md#code-review-and-documentation)
 and add it in. Then copy all your code into your docker container as
 you did in [python package
 setup](instructions/python_packages.md#testing-your-package).
@@ -507,7 +509,7 @@ anyone can view the nice API documentation that Sphinx built for you.
 
 GitHub pages is an alternative form of GitHub repository that enables
 GitHub to act as a server for static files. To create your GitHub
-pages repository go to [GitHub](github.com/) and create a new
+pages repository go to [GitHub](https://github.com/) and create a new
 repository. This repositories name will be special it needs to be
 `'your GitHub user name'.github.io`. Go ahead and give the repository a
 license and a .gitignore file though it technically won't need
@@ -614,7 +616,7 @@ git commit -m "Update to revision 0.0.1. See HISTORY.md"
 git push
 ```
 
-Now go to [GitHub](github.com/) and click on your project's
+Now go to [GitHub](https://github.com/) and click on your project's
 repository. Since GitHub automatically takes you to the master branch
 nothing will look different. To see your changes click on the
 `Branch: master` button and select 'dev' from the drop-down menu. Now
