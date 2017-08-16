@@ -446,7 +446,7 @@ other documentation source files.
 ```
 
 So open up your master file (emacs is installed in the docker
-container) located at `docs/index.rst`. For now we'll simply add a
+container) located at `docs/[index.rst](docs/index.rst)`. For now we'll simply add a
 single code block to the master file right after it has:
 
 ```
