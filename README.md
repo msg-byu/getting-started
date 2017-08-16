@@ -386,9 +386,262 @@ the code coverage and build.
 
 ## API Documentation
 
+API documentation, Application Programming Interface documentation,
+describes to users of your code base how it works and gives examples
+of code usage. If you've been following the instructions in this walk
+through then you've already got documentation built into your python
+code. If not then go back to [Code
+Documentation](#instructions/first_code.md#code-review-and-documentation)
+and add it in. Then copy all your code into your docker container as
+you did in [python package
+setup](instructions/python_packages.md#testing-your-package).
+
+### Sphinx
+
+Once in your docker container navigate into your project:
+
+```
+cd 'git_repo'
+```
+
+Now we are going to use [Sphinx](http://www.sphinx-doc.org/en/stable/)
+to build your documentation. In the terminal type:
+
+```
+sphinx-quickstart
+```
+
+Sphinx will start and prompt you through questions. The first is
+asking you where you want the information sphinx makes for you to
+go. If directory doesn't exist sphinx can make it. Tell Sphinx to put
+the documentation in `docs` then press enter.
+
+Next is a question about how to construct the build directory. This
+won't make much difference but go ahead and stick with the default
+settings (n or just push enter). Go with the default on the next field
+as well. Now Sphinx wants to know things about you and your project,
+give it the appropriate entries (when it asks for project version use
+0.0 and 0.0.1 for the release).
+
+For the rest of the questions it's best to stick with Sphinx's default
+values for now, you can feel free to experiment with them later. There
+are 2 exceptions, The first is that you want to enable the sphinx
+autodoc extension. So when sphinx asks you `autodoc: automatically
+insert docstrings from modules (y/n)` (this happens right after it
+asks about 'epub') type `y` for yes. The second is you want to create
+a .nojekyll file, this prompt will come up as `githubpages: create
+.nojekyll file to publish the document in GitHub pages (y/n)' here say
+yes to create the `.nojekyll' file (this file changes how things look
+for GitHub).
+
+For the last two prompts you can say yes (the default) to each build
+option but we won't be using the windows command file in this tutorial
+so you really don't need it.
+
+Now we need to do as Sphinx suggests and:
+
+```
+You should now populate your master file docs/index.rst and create
+other documentation source files.
+```
+
+So open up your master file (emacs is installed in the docker
+container) located at `docs/index.rst`. For now we'll simply add a
+single code block to the master file right after it has:
+
+```
+.. toctree::
+   :maxdepth: 2
+```
+
+We want to add code that will tell Sphinx to include our `trial.py`
+file in the documentation. To do this add the lines (replace demo with
+your package name and for ease of reading I recommend leaving a blank
+line between the lines you add and the `:maxdepth: 2` line):
+
+```
+.. automodule :: demo.trial
+   :members:
+```
+
+This code simply informs the make file to automatically add
+documentation for the trial module to the documentation site. With that
+done type:
+
+```
+cd docs
+make html
+```
+
+There are many different options for building your API documentation,
+for an example of a different setup see [aflow's docs
+folder](https://github.com/rosenbrockc/aflow/tree/master/docs), as you
+get more experience you should experiment with what you want your
+documentation to look like. When the make has finished we're going to
+copy the entire project back over to your home machine. When you do
+this make sure you are in the directory that contains your GitHub
+repository's folder, in other words if use:
+
+```
+ls
+```
+
+You should see the repository file name listed. If not get to that
+point then use:
+
+```
+docker cp trial:'git_repo' .
+```
+
+When this is done you will have a new folder in your repository called
+docs. You can now open your documentation using:
+
+```
+open 'get_repo/docs/_build/index.html
+```
+
+If this doesn't work don't worry, we're going to make it so that
+anyone can view the nice API documentation that Sphinx built for you.
+
+### GitHub Pages
+
+GitHub pages is an alternative form of GitHub repository that enables
+GitHub to act as a server for static files. To create your GitHub
+pages repository go to [GitHub](github.com/) and create a new
+repository. This repositories name will be special it needs to be
+`'your GitHub user name'.github.io`. Go ahead and give the repository a
+license and a .gitignore file though it technically won't need
+eat. Then clone the repository to your local machine just like you did
+in the [Cloning
+Repositories](instructions/github.md#cloning-repositories) section of
+this tutorial. DO NOT clone this repository into your project
+repository. I recommend placing it next to, or on the same level as or
+in the same folder as, your project repository.
+
+Now do the following:
+
+```
+cd 'your GitHub user name'.github.io
+touch .nojekyll
+mkdir 'your project name'
+cp -r ../'git_repo'/docs/_build/* 'your project name'/.
+```
+
+Where 'your project name' should be the name of your python package,
+'git_repo' is your git repositories name, and 'your GitHub user name'
+should be your GitHub user name. Now type:
+
+```
+git add .
+git commit -m "Added API documentation for 'your project name'.
+git push
+```
+
+GitHub will then prompt you for your user name and password. Now go
+back to your GitHub account and click on your github.io
+repository. The changes you made on your local machine should now be
+there. What you just did was add all the files in your local copy of
+the repository to the git repository using `git add .` (you can also
+add files individually by listing them after the add keyword), the you
+commit ed them for a push using `git commit -m "Some message."` (the -m
+tells git that you have a message to add, if you don't use the -m then
+git will open an editor of some kind for you to add a message anyway),
+then finally you pushed the changes up to GitHub.
+
+Now to make your API documentation findable to the general public we
+want to add the following line to your 'README.md' file (it can go
+anywhere some developers put it at the bottom of the file some near
+the top, it's up to you):
+
+``` 
+Full API Documentation available at: [github pages](https://'your
+GitHub user name'.github.io/'your project name/).  
+```
+
+Make sure that the project name matches the folder name your created
+in your github.io repository. With that addition your API documentation
+will be readable when you make a push at the end of the next section.
+
 ## HISTORY.md and Your First Commit
 
-Now that you have code, unit-tests, and instructions for Travis CI we
-are almost ready to make your first commit to GitHub.
+Now that you have [code](#your-first-code),
+[unit-tests](instructions/first_code.md#tests-driven-development),
+[CI](#continuous-integration-travis-ci), [code
+coverage](#code-coverage-codecov), [code
+quality](#code-quality-landscape) and [API
+documentation](#api-documentation) we are almost ready to make your
+first commit to GitHub for this project. All we need to do is create a
+HISTORY.md file.
 
+The HISTORY.md file contains the revision history for your code. Go
+ahead and create the file then add the following to it:
+
+```
+# Revision History for "your project"
+
+## Revision 0.0.1
+- Initial code commit of trial.py.
+- Updated README.md to have API Documentation link, and badges for
+  build status, code coverage, and code quality.
+- Added files for Travis CI.
+- Added files to create python package.
+```
+
+Anytime you change your code base you should increment your code
+version and record the changes in your HISTORY.md file. This helps
+other developers now haw you code changed over time and track places
+where the code may have broken.
+
+Now use:
+
+```
+git branch
+```
+
+To ensure that you are on your development (dev) branch. If you aren't then use:
+
+```
+git fetch
+git checkout dev
+git branch
+```
+
+Now use:
+
+```
+git add .
+git commit -m "Update to revision 0.0.1. See HISTORY.md"
+git push
+```
+
+Now go to [GitHub](github.com/) and click on your project's
+repository. Since GitHub automatically takes you to the master branch
+nothing will look different. To see your changes click on the
+`Branch: master` button and select 'dev' from the drop-down menu. Now
+all your changes should be visible. To add these changes to your master
+branch we're going to use a pull request. Near the top of the list of
+files for your repository there should be a line that says something
+like `this branch is 1 commit ahead of master` then a button that says
+create pull request. Click the button, on the next page find the
+button that says `submit pull request`. Now we wait. Come back to your
+repository in 10-15 minutes and click on the pull request tab near the
+top. Your new pull request will be listed, click on it. There should
+be a report from Travis CI, CodeCov, and Landscape shown, if you
+passed all three checks (CodeCov may have encountered an error on this
+initial run but that's okay) then push `merge pull request` otherwise
+wait a few more minutes that check again. 
+
+Once you've merged the pull request you should see three badges appear
+on your repositories README If any of them don't have the word
+'passing' or '100%' in them then figure out why and fix them.
+
+The beauty of this approach is that it enables you to use services
+like Travis CI and CodeCov to ensure that your collaborators aren't
+damaging your code. In that vane you should also always be pushing
+changes to a development branch then using pull requests to merge in
+changes when they are ready for public use.
+
+That's it. You now have all the tools you need to complete your
+assignment from Dr. Hart (as far as project development is
+considered). Good luck!
 
