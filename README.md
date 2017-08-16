@@ -567,7 +567,7 @@ will be readable when you make a push at the end of the next section.
 ## HISTORY.md and Your First Commit
 
 Now that you have [code](#your-first-code),
-[unit-tests](instructions/first_code.md#tests-driven-development),
+[unit-tests](instructions/first_code.md#test-driven-development),
 [CI](#continuous-integration-travis-ci), [code
 coverage](#code-coverage-codecov), [code
 quality](#code-quality-landscape) and [API
