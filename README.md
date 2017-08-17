@@ -313,7 +313,7 @@ tested. If you recall this same line appeared in our
 `[coverage:report]` section. That is because the `[coverage:report]`
 section of setup.cfg tells coverage, a python package that writes code
 coverage reports, which things it should ignore. As you may also
-recall `raise AssertionError' and `raise NotImplementedError` were
+recall `raise AssertionError` and `raise NotImplementedError` were
 also excluded from coverage. Ultimately this ability to have code be
 ignored for a coverage report should be used sparingly and only when
 you have extremely good reason (it is also a good idea to state the
@@ -324,7 +324,7 @@ use a service called [CodeCov](https://codecov.io/). Go to
 [https://codecov.io/](https://codecov.io/) and click `Sign up` then
 `sign up with GihHub`. Once inside navigate your way to your
 repositories list, it should be empty, then click `Add new
-repository'. A list of all your repositories should appear, click on
+repository`. A list of all your repositories should appear, click on
 the repository you made for this project and a 2 step process will
 appear on the screen. Step one will have a token for you to copy, go
 ahead and copy it, you can follow the link of examples in for
@@ -432,8 +432,8 @@ autodoc extension. So when sphinx asks you `autodoc: automatically
 insert docstrings from modules (y/n)` (this happens right after it
 asks about 'epub') type `y` for yes. The second is you want to create
 a .nojekyll file, this prompt will come up as `githubpages: create
-.nojekyll file to publish the document in GitHub pages (y/n)' here say
-yes to create the `.nojekyll' file (this file changes how things look
+.nojekyll file to publish the document in GitHub pages (y/n)` here say
+yes to create the `.nojekyll` file (this file changes how things look
 for GitHub).
 
 For the last two prompts you can say yes (the default) to each build
