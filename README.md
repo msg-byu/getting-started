@@ -3,9 +3,9 @@
 A guide to getting started in the Materials Simulation Group (MSG)
 with python, Travis CI, Sphinx, GitHub and general scientific computing.
 
-What follows is meant to be an introduction to the tools you skills
+What follows is meant to be an introduction to the tools and skills
 you need to be an effective member of the MSG group and become a good
-programmer. Most of the things is this guide you will be able to
+programmer. Most of the things in this guide you will be able to
 modify and adapt to fit your own circumstances once you get familiar
 with the tools. However, the ideas behind the overall work flow and
 design process are not optional as they are the keys to writing good
@@ -13,7 +13,7 @@ scientific code.
 
 This repository contains sample code and input files that you can use
 as templates for your own project, however, when it comes to writing
-the small amounts of found here code it is highly recommended that you
+the small amounts of code found here it is highly recommended that you
 write it yourself to get practice instead of just copying the existing
 files.
 
@@ -513,7 +513,7 @@ pages repository go to [GitHub](https://github.com/) and create a new
 repository. This repositories name will be special it needs to be
 `'your GitHub user name'.github.io`. Go ahead and give the repository a
 license and a .gitignore file though it technically won't need
-eat. Then clone the repository to your local machine just like you did
+it. Then clone the repository to your local machine just like you did
 in the [Cloning
 Repositories](instructions/github.md#cloning-repositories) section of
 this tutorial. DO NOT clone this repository into your project
@@ -535,7 +535,7 @@ should be your GitHub user name. Now type:
 
 ```
 git add .
-git commit -m "Added API documentation for 'your project name'.
+git commit -m "Added API documentation for 'your project name'."
 git push
 ```
 
@@ -544,8 +544,8 @@ back to your GitHub account and click on your github.io
 repository. The changes you made on your local machine should now be
 there. What you just did was add all the files in your local copy of
 the repository to the git repository using `git add .` (you can also
-add files individually by listing them after the add keyword), the you
-commit ed them for a push using `git commit -m "Some message."` (the -m
+add files individually by listing them after the add keyword), then you
+committed them for a push using `git commit -m "Some message."` (the -m
 tells git that you have a message to add, if you don't use the -m then
 git will open an editor of some kind for you to add a message anyway),
 then finally you pushed the changes up to GitHub.
