@@ -1,23 +1,24 @@
 # Getting Started
 
 A guide to getting started in the Materials Simulation Group (MSG)
-with python, Travis CI, Sphinx, GitHub and general scientific computing.
+with python, Travis CI, Sphinx, GitHub and general scientific
+computing. This guide doesn't assume any prior programming experience.  
 
 What follows is meant to be an introduction to the tools and skills
-you need to be an effective member of the MSG group and become a good
-programmer. Most of the things in this guide you will be able to
-modify and adapt to fit your own circumstances once you get familiar
-with the tools. However, the ideas behind the overall work flow and
-design process are not optional as they are the keys to writing good
+you need to be an effective member of the MSG group and to become a
+good programmer. You will be able to modify and adapt most of the
+activities to fit your own circumstances once you get familiar with
+the tools. However, the ideas behind the overall work flow and design
+process are not optional as they are the keys to writing good
 scientific code.
 
 This repository contains sample code and input files that you can use
-as templates for your own project, however, when it comes to writing
-the small amounts of code found here it is highly recommended that you
-write it yourself to get practice instead of just copying the existing
+as templates for your own project. However, when it comes to writing
+the small amounts of code suggested in the guide, we recommend strongly that you
+write it yourself to get practice. Don't just copy the existing
 files.
 
-We also recommend that you not skip any sections in this walk through,
+We also recommend that you not skip any sections in this walk-through,
 even if you are already familiar with the concepts.
 
 #### Table of Contents
@@ -69,11 +70,11 @@ even if you are already familiar with the concepts.
 
 ## The Goal
 
-If you have yet to do so you should contact [Dr. Gus
-Hart](http://msg.byu.edu/) to express your interest in joining MSG and
-ask him for problems to work through.
+If you are interested in joining the group, download the one of the
+chapters of [Giordano's "Computational Physics"](http://msg.byu.edu/downloads/) book and use the problems
+in the book to practice the steps below.
 
-Your task, once you have your assigned problems, is to code them up as
+Your task, once you download the description of the example problems, is to code them up as
 a python package with a full suite of [unit
 tests](https://en.wikipedia.org/wiki/Unit_testing) on a [continuous
 integration](https://en.wikipedia.org/wiki/Continuous_integration)
@@ -82,9 +83,9 @@ coverage](https://en.wikipedia.org/wiki/Code_coverage), and [API
 documentation](https://en.wikipedia.org/wiki/Application_programming_interface). If
 you don't know what any of these things mean feel free to follow the
 links, or sit tight. They should become clear as we cover each topic
-in this walk through.
+in this walk-through.
 
-In addition you will be putting your code up on
+In addition, you will be putting your code up on
 [GitHub](https://github.com/) and learning the basics of git to create
 a repository that will look somewhat similar to this one when you are
 done.
@@ -129,7 +130,7 @@ docker run --name 'name' --rm -i -t wsmorgan/python bash
 ```
 
 Where the 'name' variable has be replaced by a name you'll remember
-(for the rest of the walk through the name I will be using is
+(for the rest of the walk-through the name I will be using is
 demo). This command creates a docker container with the name you
 specify and opens an interactive bash terminal of the docker
 image. The '--rm' flag means that when you exit the interactive
@@ -390,9 +391,9 @@ the code coverage and build.
 
 API documentation, Application Programming Interface documentation,
 describes to users of your code base how it works and gives examples
-of code usage. If you've been following the instructions in this walk
-through then you've already got documentation built into your python
-code. If not then go back to [Code
+of code usage. If you've been following the instructions in this
+walk-through then you've already got documentation built into your
+python code. If not then go back to [Code
 Documentation](instructions/first_code.md#code-review-and-documentation)
 and add it in. Then copy all your code into your docker container as
 you did in [python package

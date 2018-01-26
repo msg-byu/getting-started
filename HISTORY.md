@@ -1,5 +1,9 @@
 # Revision History for getting started.
 
+## Revision 0.0.5
+- Added links in the README to the Giordano files on msg.byu.edu
+- Edited the README a bit
+
 ## Revision 0.0.4
 - Finished instructions/first_code.md
 - Added tests/test_demo.py.
