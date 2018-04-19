@@ -8,8 +8,8 @@ What follows is meant to be an introduction to the tools and skills
 you need to be an effective member of the MSG group and to become a
 good programmer. You will be able to modify and adapt most of the
 activities to fit your own circumstances once you get familiar with
-the tools. However, the ideas behind the overall work flow and design
-process are not optional as they are the keys to writing good
+the tools. However, the overall work flow and design
+process are not optional---they are the keys to writing good
 scientific code.
 
 This repository contains sample code and input files that you can use
