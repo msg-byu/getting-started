@@ -104,11 +104,10 @@ In this group we write most of our code in
 [python](https://www.python.org/), if we need it to be faster then we
 prototype it in python and then code it in
 [fortran](https://en.wikipedia.org/wiki/Fortran). That being said we
-execute most of our code from the terminal, to fit into the group with
-ease you should also be making use of the terminal. If you are a
-Windows or linux user we strongly recommend you get
-[docker](https://www.docker.com/) for this reason (we are sick of
-trying to make code work on windows and linux machines). If you are a
+execute most of our code from the terminal; 
+to work effectively in computational science, you should get used to working in the terminal. If you are a
+Windows user we strongly recommend you get
+[docker](https://www.docker.com/) for this reason (our group doesn't have expertise in Windows---it's not a friendly OS for computation). If you are a
 mac user all you need is to ensure that you have python installed on
 your machine, however, you should still get
 [docker](https://www.docker.com/).
