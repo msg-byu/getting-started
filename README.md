@@ -121,6 +121,7 @@ pull our python docker image using the following:
 docker pull wsmorgan/python
 ```
 
+(Note: This is a rather large download, about 400 MB total.)
 This image has working copies of python 2.7, 3.4, 3.5, and 3.6. You
 are welcome to develop in any of them. To access the image use:
 
