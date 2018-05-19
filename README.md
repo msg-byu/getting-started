@@ -527,7 +527,7 @@ Now do the following:
 cd 'your GitHub user name'.github.io
 touch .nojekyll
 mkdir 'your project name'
-cp -r ../'git_repo'/docs/_build/* 'your project name'/.
+cp -r ../'git_repo'/docs/_build/html* 'your project name'/.
 ```
 
 Where 'your project name' should be the name of your python package,
