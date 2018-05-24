@@ -126,12 +126,10 @@ This image has working copies of python 2.7, 3.4, 3.5, and 3.6. You
 are welcome to develop in any of them. To access the image use:
 
 ```
-docker run --name 'name' --rm -i -t wsmorgan/python bash
+docker run --name 'my_container' --rm -i -t wsmorgan/python bash
 ```
 
-Where the 'name' variable has be replaced by a name you'll remember
-(for the rest of the walk-through the name I will be using is
-demo). This command creates a docker container with the name you
+Where the 'my_container' variable has be replaced by a name you'll remember. This command creates a docker container with the name you
 specify and opens an interactive bash terminal of the docker
 image. The '--rm' flag means that when you exit the interactive
 terminal the container will also be deleted. We will be using this
@@ -404,7 +402,7 @@ setup](instructions/python_packages.md#testing-your-package).
 Once in your docker container navigate into your project:
 
 ```
-cd 'git_repo'
+cd 'my_repo'
 ```
 
 Now we are going to use [Sphinx](http://www.sphinx-doc.org/en/stable/)
@@ -458,12 +456,12 @@ single code block to the master file right after it has:
 ```
 
 We want to add code that will tell Sphinx to include our `trial.py`
-file in the documentation. To do this add the lines (replace demo with
+file in the documentation. To do this add the lines (replace my_pkg with
 your package name and for ease of reading I recommend leaving a blank
 line between the lines you add and the `:maxdepth: 2` line):
 
 ```
-.. automodule :: demo.trial
+.. automodule :: my_pkg.trial
    :members:
 ```
 
@@ -493,7 +491,7 @@ You should see the repository file name listed. If not, navigate to that
 level. Then use:
 
 ```
-docker cp my_container:'git_repo' .
+docker cp my_container:'my_repo' .
 ```
 
 When this is done you will have a new folder in your repository called
@@ -526,17 +524,17 @@ Now do the following:
 ```
 cd 'your GitHub user name'.github.io
 touch .nojekyll
-mkdir 'your project name'
-cp -r ../'git_repo'/docs/_build/* 'your project name'/.
+mkdir 'my_pkg'
+cp -r ../'my_repo'/docs/_build/* 'my_pkg'/.
 ```
 
-Where 'your project name' should be the name of your python package,
-'git_repo' is your git repositories name, and 'your GitHub user name'
+Where 'my_pkg' should be the name of your python package,
+'my_repo' is your git repositories name, and 'your GitHub user name'
 should be your GitHub user name. Now type:
 
 ```
 git add .
-git commit -m "Added API documentation for 'your project name'."
+git commit -m "Added API documentation for 'my_pkg'."
 git push
 ```
 
@@ -558,7 +556,7 @@ the top, it's up to you):
 
 ```
 Full API Documentation available at: [github pages](https://'your
-GitHub user name'.github.io/'your project name/).  
+GitHub user name'.github.io/'my_pkg/).  
 ```
 
 Make sure that the project name matches the folder name your created
