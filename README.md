@@ -98,6 +98,8 @@ Before we do anything on your local computer you need to get a GitHub
 account and make a repository. The directions
 [here](instructions/github.md) will walk you through the process.
 
+[Here](https://try.github.io/levels/1/challenges/1) is a good interactive tutorial on git.
+
 ### Python
 
 In this group we write most of our code in
