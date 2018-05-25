@@ -5,7 +5,7 @@
 [Introduction](#introduction)
 
 [Create a Repository](#create-a-repository)
-  
+
 [Branches and Code Stability](#branches-and-code-stability)
 
 [Cloning Repositories](#cloning-repositories)
@@ -21,17 +21,17 @@ to interact with GitHub one you are setup.
 
 ## Create a Repository
 
-To make a GitHub account to to [GitHub](https://github.com/) and click
-sign up for GitHub, create your user name and password and your all
-set.  Once you have logged into GitHub create a new repository by
-clicking on the plus sign on the top right of the window and clicking
-on 'Now repository' from the drop-down menu. You now need to give the
-repository a name, you can give it any name you like but I would
-recommend something related to the exercise you've been given by
-Dr. Hart. You should also give it a description, again whatever you
-like but it should reflect what the code you are going to write will
-do. Ensure that the Public option is checked and check the box next to
-`Initialize this repository with a README'.
+To make a GitHub account go to [GitHub](https://github.com/), click
+sign up for GitHub, and create your user name and password. Once you
+have logged into GitHub, create a new repository by clicking on the
+plus sign on the top right of the window and clicking on 'Now repository'
+from the drop-down menu. You now need to give the repository a name.
+You can give it any name you’d like, but I would recommend titling it
+something related to the exercise you've been given by Dr. Hart. You
+should also give it a description. Again this can be whatever you’d
+like, but it should reflect what the code you are going to write will
+do. Ensure that the Public option is checked and check the box next
+to `Initialize this repository with a README’.”
 
 Before you click 'Create repository' you should also select the
 'Python' option from the 'Add .gitignore' drop-down menu and select a
@@ -81,7 +81,7 @@ download' button and copy the address it shows you. Then in the
 terminal type:
 
 ```
-git clone (past what you copied from GitHub here)
+git clone (paste what you copied from GitHub here)
 ```
 
 this will clone the repository to your local machine. Now use:

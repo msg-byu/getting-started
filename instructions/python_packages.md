@@ -7,7 +7,7 @@
 [Setting up Your Package](#setting-up-your-package)
   * [Setup.cfg](#setupcfg)
   * [Setup.py](#setuppy)
-  
+
 [Testing Your Package](#testing-your-package)
 
 ## Introduction
@@ -47,10 +47,10 @@ without spaces, you don't have to follow these conventions but it's a
 good idea to keep them in mind in case you do submit a your package to
 pypi. In the [sample
 repository](https://github.com/msg-byu/getting-started) the package
-name is 'demo' so the command would be:
+name is 'my_pkg' so the command would be:
 
 ```
-mkdir demo
+mkdir my_pkg
 ```
 
 Once you've chosen a package name and created the folder you will need
@@ -95,7 +95,7 @@ name=''
 ```
 
 In this field you should enter the name of your package (for the same
-repository this would be ```name='demo'```).
+repository this would be ```name='my_pkg'```).
 
 ```
 version=''
@@ -216,7 +216,7 @@ update the python language version.
 This section of your setup.py should now look something like:
 
 ```
-setup(name='demo',
+setup(name='my_pkg',
       version='0.0.1',
       description='Some descriptive words like: This is a demonstrative package.',
       long_description= "" if not path.isfile("README.md") else read_md('README.md'),
@@ -229,7 +229,7 @@ setup(name='demo',
       install_requires=[
           "numpy",
       ],
-      packages=['demo'],
+      packages=['my_pkg'],
       # scripts=[''],
       include_package_data=True,
       classifiers=[
@@ -250,26 +250,26 @@ setup(name='demo',
 At this point you should have a file structure that looks like:
 
 ```
-'git_repo'/'package'/__init__.py
-'git_repo'/setup.py
-'git_repo'/setup.cfg
-'git_repo'/README.md
-'git_repo'/LICENSE
-'git_repo'/.gitignore
+'my_repo'/'package'/__init__.py
+'my_repo'/setup.py
+'my_repo'/setup.cfg
+'my_repo'/README.md
+'my_repo'/LICENSE
+'my_repo'/.gitignore
 ```
 
 In order to do anything with this package we need to include some
 python code. To ensure that everything is working we'll make a test
-script, [trial.py](../demo/trial.py), located in the package folder:
+script, [trial.py](../my_pkg/trial.py), located in the package folder:
 
 ```
-'git_repo'/'package'/trial.py
+'my_repo'/'package'/trial.py
 ```
 
 In the sample repository this code is located at:
 
 ```
-getting_started/demo/trial.py
+getting_started/my_pkg/trial.py
 ```
 
 The contents of trial.py should be:
@@ -277,7 +277,7 @@ The contents of trial.py should be:
 ```
 def square(x):
     """Finds the square of the input.
-    
+
     Args:
         x (float): The number to be squared.
 
@@ -300,26 +300,26 @@ running in one terminal while you use another to copy files to it. If
 your docker container is not running then use:
 
 ```
-docker run --name demo --rm -i -t wsmorgan/python bash
+docker run --name my_container --rm -i -t wsmorgan/python bash
 ```
 
 to get it going. Then in your other terminal use navigate to the
 folder your git repository is in and use:
 
 ```
-docker cp 'git_repo' demo:.
+docker cp 'my_repo' my_pkg:.
 ```
 
-(where 'git_repo' is the repository file) to copy the repository into
+(where 'my_repo' is the repository file) to copy the repository into
 the docker container. Now go back to the terminal that you used
 `docker run` in and type `ls`. You should now see your git
-repository. Now navigate into the folder `cd 'git_repo'` then enter
-the commands (replace demo with your package name):
+repository. Now navigate into the folder `cd 'my_repo'` then enter
+the commands (replace my_pkg with your package name):
 
 ```
 pip install -e .
 python
-from demo import trial
+from my_pkg import trial
 trial.square(2)
 exit()
 ```
@@ -327,7 +327,18 @@ exit()
 You should have seen the number 4 printed to the screen before you
 typed `exit()`. If you didn't or any of these commands gave you errors
 stop and go back through this setup to ensure that you have everything
-correct. If everything is correct please submit an [issue
+correct. If
+
+```
+pip install -e .
+```
+gives an error, you may have to use
+
+```
+pip install --upgrade setuptools
+```
+
+If you still have errors, please submit an [issue
 here](https://github.com/msg-byu/getting-started/issues) describing
 your problem and we'll get back to you ASAP.
 

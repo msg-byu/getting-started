@@ -31,7 +31,7 @@ even if you are already familiar with the concepts.
     * [Create a Repository](instructions/github.md#create-a-repository)
     * [Braches and Code Stability](instructions/github.md#branches-and-code-stability)
     * [Cloning Repositories](instructions/github.md#cloning-repositories)
-    
+
   * [Python](#python)
     * [Docker](#docker)
 
@@ -41,9 +41,9 @@ even if you are already familiar with the concepts.
     * [Setting Up Your Package](instructions/python_packages.md#setting-up-your-package)
       * [Setup.cfg](instructions/python_packages.md#setupcfg)
       * [Setup.py](instructions/python_packages.md#setuppy)
-      
+
     * [Testing Your Package](instructions/python_packages.md#testing-your-package)
-    
+
   * [Your First Code](#your-first-code)
     * [Code Documentation](instructions/first_code.md#code-review-and-documentation)
     * [Writing unit-tests](instructions/first_code.md#writing-unit-tests)
@@ -51,7 +51,7 @@ even if you are already familiar with the concepts.
     * [Test-driven Development](instructions/first_code.md#tests-driven-development)
       * [Your Second Function](instructions/first_code.md#your-second-function)
       * [Test, Fix, Repeat](instructions/first_code.md#test-fix-repeat)
-      
+
     * [Test-driven Workflow](instructions/first_code.md#overview)
 
 [Continuous Integration, Code Coverage, and Quality](#continuous-integration-code-coverage-and-quality)
@@ -61,7 +61,7 @@ even if you are already familiar with the concepts.
     * [CodeCov Badge](#codecov-badge)
   * [Code Quality, Landscape](#code-quality-landscape)
     * [Code Quality Badge](#code-quality-badge)
-    
+
 [API Documentation](#api-documentation)
   * [Sphinx](#sphinx)
   * [GitHub Pages](#github-pages)
@@ -104,7 +104,7 @@ In this group we write most of our code in
 [python](https://www.python.org/), if we need it to be faster then we
 prototype it in python and then code it in
 [fortran](https://en.wikipedia.org/wiki/Fortran). That being said we
-execute most of our code from the terminal; 
+execute most of our code from the terminal;
 to work effectively in computational science, you should get used to working in the terminal. If you are a
 Windows user we strongly recommend you get
 [docker](https://www.docker.com/) for this reason (our group doesn't have expertise in Windows---it's not a friendly OS for computation). If you are a
@@ -126,12 +126,10 @@ This image has working copies of python 2.7, 3.4, 3.5, and 3.6. You
 are welcome to develop in any of them. To access the image use:
 
 ```
-docker run --name 'name' --rm -i -t wsmorgan/python bash
+docker run --name 'my_container' --rm -i -t wsmorgan/python bash
 ```
 
-Where the 'name' variable has be replaced by a name you'll remember
-(for the rest of the walk-through the name I will be using is
-demo). This command creates a docker container with the name you
+Where the 'my_container' variable has be replaced by a name you'll remember. This command creates a docker container with the name you
 specify and opens an interactive bash terminal of the docker
 image. The '--rm' flag means that when you exit the interactive
 terminal the container will also be deleted. We will be using this
@@ -161,7 +159,7 @@ ensure the code behaves as we expect.
 To setup your python package follow the instructions found
 [here](instructions/python_packages.md).
 
-### Your First Code 
+### Your First Code
 
 Technically you've already written your first python code during the
 process of making and testing your [python
@@ -182,7 +180,7 @@ doesn't get messed up as you continue to develop and other people
 start to contribute to your project. One way to ensure that new code
 revisions don't break your codes functionality is Continuous
 Integration (CI). The idea is that every time anyone pushes to your
-git repository or submits a pull request the CI service will run all your
+git repository or creates a pull request the CI service will run all your
 unit tests and let you know if they still pass. The CI provider I'll
 cover here is called [Travis CI](https://travis-ci.org/).
 
@@ -200,7 +198,7 @@ pops down.
 Once your account has synced with GitHub you should see the repository
 you created at the start of this project with grey box and `x` in a
 square next to it. Click that box, it will turn blue and, the `x` will
-turn into a check and viola, you've enabled Travis CI to monitor and
+turn into a check and voila! You've enabled Travis CI to monitor and
 run the unit tests on your repository.
 
 Now we just need to make sure Travis CI knows what to do when it's
@@ -327,14 +325,14 @@ use a service called [CodeCov](https://codecov.io/). Go to
 repositories list, it should be empty, then click `Add new
 repository`. A list of all your repositories should appear, click on
 the repository you made for this project and a 2 step process will
-appear on the screen. Step one will have a token for you to copy, go
+appear on the screen. Step one will have a token for you to copy. Go
 ahead and copy it, you can follow the link of examples in for
 uploading the reports but since I'm about to tell you how to do that
 it's completely optional. Now go to your `tox.ini` file and add the
 following to the bottom of the file:
 
 ```
-    codecov --token='past your token here'
+    codecov --token='paste your token here'
 ```
 
 That's it. With that last line added Travis CI will now send your
@@ -404,7 +402,7 @@ setup](instructions/python_packages.md#testing-your-package).
 Once in your docker container navigate into your project:
 
 ```
-cd 'git_repo'
+cd 'my_repo'
 ```
 
 Now we are going to use [Sphinx](http://www.sphinx-doc.org/en/stable/)
@@ -449,7 +447,7 @@ other documentation source files.
 ```
 
 So open up your master file (emacs is installed in the docker
-container) located at docs/[index.rst](docs/index.rst). For now we'll simply add a
+container) located at docs/[index.rst](docs/index.rst). From your terminal get into the docs directory and type emacs index.rst. This will open the emacs text editor and allow you to edit the file. For now we'll simply add a
 single code block to the master file right after it has:
 
 ```
@@ -458,17 +456,17 @@ single code block to the master file right after it has:
 ```
 
 We want to add code that will tell Sphinx to include our `trial.py`
-file in the documentation. To do this add the lines (replace demo with
+file in the documentation. To do this add the lines (replace my_pkg with
 your package name and for ease of reading I recommend leaving a blank
 line between the lines you add and the `:maxdepth: 2` line):
 
 ```
-.. automodule :: demo.trial
+.. automodule :: my_pkg.trial
    :members:
 ```
 
 This code simply informs the make file to automatically add
-documentation for the trial module to the documentation site. With that
+documentation for the trial module to the documentation site. When you're done, use Ctrl-x Ctrl-s to save and Ctrl-x Ctrl-c to close. With that
 done type:
 
 ```
@@ -489,11 +487,11 @@ repository's folder, in other words if use:
 ls
 ```
 
-You should see the repository file name listed. If not get to that
-point then use:
+You should see the repository file name listed. If not, navigate to that
+level. Then use:
 
 ```
-docker cp trial:'git_repo' .
+docker cp my_container:'my_repo' .
 ```
 
 When this is done you will have a new folder in your repository called
@@ -511,9 +509,9 @@ anyone can view the nice API documentation that Sphinx built for you.
 GitHub pages is an alternative form of GitHub repository that enables
 GitHub to act as a server for static files. To create your GitHub
 pages repository go to [GitHub](https://github.com/) and create a new
-repository. This repositories name will be special it needs to be
+repository. This repository's name needs to be
 `'your GitHub user name'.github.io`. Go ahead and give the repository a
-license and a .gitignore file though it technically won't need
+license and a .gitignore file, though it technically won't need
 it. Then clone the repository to your local machine just like you did
 in the [Cloning
 Repositories](instructions/github.md#cloning-repositories) section of
@@ -526,22 +524,22 @@ Now do the following:
 ```
 cd 'your GitHub user name'.github.io
 touch .nojekyll
-mkdir 'your project name'
-cp -r ../'git_repo'/docs/_build/html/* 'your project name'/.
+mkdir 'my_pkg'
+cp -r ../'my_repo'/docs/_build/* 'my_pkg'/.
 ```
 
-Where 'your project name' should be the name of your python package,
-'git_repo' is your git repositories name, and 'your GitHub user name'
+Where 'my_pkg' should be the name of your python package,
+'my_repo' is your git repositories name, and 'your GitHub user name'
 should be your GitHub user name. Now type:
 
 ```
 git add .
-git commit -m "Added API documentation for 'your project name'."
+git commit -m "Added API documentation for 'my_pkg'."
 git push
 ```
 
 GitHub will then prompt you for your user name and password. Now go
-back to your GitHub account and click on your github.io
+back to your  and click on your github.io
 repository. The changes you made on your local machine should now be
 there. What you just did was add all the files in your local copy of
 the repository to the git repository using `git add .` (you can also
@@ -556,9 +554,9 @@ want to add the following line to your 'README.md' file (it can go
 anywhere some developers put it at the bottom of the file some near
 the top, it's up to you):
 
-``` 
+```
 Full API Documentation available at: [github pages](https://'your
-GitHub user name'.github.io/'your project name/).  
+GitHub user name'.github.io/'my_pkg/).  
 ```
 
 Make sure that the project name matches the folder name your created
@@ -592,7 +590,7 @@ ahead and create the file then add the following to it:
 
 Anytime you change your code base you should increment your code
 version and record the changes in your HISTORY.md file. This helps
-other developers now haw you code changed over time and track places
+other developers know how your code changed over time and track places
 where the code may have broken.
 
 Now use:
@@ -625,14 +623,14 @@ all your changes should be visible. To add these changes to your master
 branch we're going to use a pull request. Near the top of the list of
 files for your repository there should be a line that says something
 like `this branch is 1 commit ahead of master` then a button that says
-create pull request. Click the button, on the next page find the
-button that says `submit pull request`. Now we wait. Come back to your
+'new pull request'. Click the button, on the next page find the
+button that says `create pull request`. Now we wait. Come back to your
 repository in 10-15 minutes and click on the pull request tab near the
 top. Your new pull request will be listed, click on it. There should
 be a report from Travis CI, CodeCov, and Landscape shown, if you
 passed all three checks (CodeCov may have encountered an error on this
 initial run but that's okay) then push `merge pull request` otherwise
-wait a few more minutes that check again. 
+wait a few more minutes and check again.
 
 Once you've merged the pull request you should see three badges appear
 on your repositories README If any of them don't have the word
@@ -647,4 +645,3 @@ changes when they are ready for public use.
 That's it. You now have all the tools you need to complete your
 assignment from Dr. Hart (as far as project development is
 considered). Good luck!
-

@@ -1,5 +1,10 @@
 # Revision History for getting started.
 
+## Revision 0.0.6
+- Fixed TypeErrors
+- Renamed demo as my_pkg, git_repo as my_repo and the docker container
+    as my_container for clarity
+
 ## Revision 0.0.5
 - Added links in the README to the Giordano files on msg.byu.edu
 - Edited the README a bit
