@@ -42,12 +42,12 @@ to do that can be found
 The first thing to do in setting up your python package is to choose a
 package name and create a folder in your repository with that
 name. This folder will contain all your python code for this
-project. By convention python package names are usually lower case
-without spaces, you don't have to follow these conventions but it's a
+project. By convention, python package names are usually lower case
+without spaces. You don't have to follow these conventions, but it is a
 good idea to keep them in mind in case you do submit a your package to
 pypi. In the [sample
 repository](https://github.com/msg-byu/getting-started) the package
-name is 'my_pkg' so the command would be:
+name is `my_pkg` so the command would be:
 
 ```
 mkdir my_pkg
@@ -55,7 +55,7 @@ mkdir my_pkg
 
 Once you've chosen a package name and created the folder you will need
 to create a [setup.py](../setup.py) and
-[setup.cfg](../setup.cfg). These files tell pip how to install your
+[setup.cfg](../setup.cfg). These files tell `pip` how to install your
 package. You will find templates of both files in the sample
 repository. You should copy them to your repository so that they are
 on the same level as you package directory. You will also want to make
@@ -67,17 +67,17 @@ package. Examples of this can be found
 
 ### Setup.cfg
 
-You should take a good look at setup.cfg but you don't need to modify
+You should take a good look at `setup.cfg` but you don't need to modify
 it. A lot of what you find inside is related to generating code
 coverage from the unit tests. The first two lines establish an alias
-for pytest, the lines between `[coverage:report]` and `[coverage:run]`
+for `pytest`, the lines between `[coverage:report]` and `[coverage:run]`
 tell the unit testing package what to ignore or exclude from coverage
 reports. We'll talk more about this later when discussing [code
 coverage](coverage.md). The last portion, under `[coverage:run]`, lets the unit
 testing software know if there are any modules that should be excluded
 from a coverage report entirely. For now, and in most cases, you will
 leave this blank. If you want to know more about building the
-setup.cfg file you can read the python
+`setup.cfg` file you can read the python
 [documentation](https://docs.python.org/2/distutils/configfile.html).
 
 ### Setup.py

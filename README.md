@@ -82,13 +82,13 @@ integration](https://en.wikipedia.org/wiki/Continuous_integration)
 coverage](https://en.wikipedia.org/wiki/Code_coverage), and [API
 documentation](https://en.wikipedia.org/wiki/Application_programming_interface). If
 you don't know what any of these things mean feel free to follow the
-links, or sit tight. They should become clear as we cover each topic
+links or sit tight---we'll be there soon. This things should become clear as we cover each topic
 in this walk-through.
 
 In addition, you will be putting your code up on
-[GitHub](https://github.com/) and learning the basics of git to create
+[GitHub](https://github.com/) and learning the basics of `git` to create
 a repository that will look somewhat similar to this one when you are
-done.
+done. 
 
 ## Computer Setup
 
@@ -109,14 +109,13 @@ prototype it in python and then code it in
 execute most of our code from the terminal;
 to work effectively in computational science, you should get used to working in the terminal. If you are a
 Windows user we strongly recommend you get
-[docker](https://www.docker.com/) for this reason (our group doesn't have expertise in Windows---it's not a friendly OS for computation). If you are a
-mac user all you need is to ensure that you have python installed on
-your machine, however, you should still get
+[docker](https://www.docker.com/) for this reason. (Our group Windows expertise---we don't find Windows convenient for computation.) If you are a
+mac user, you have a very nice terminal (and python) already. However, you should still get
 [docker](https://www.docker.com/).
 
 #### Docker
 
-Once you have docker go to your terminal, or the docker terminal and
+Once you have docker, go to your terminal (or the docker terminal) and
 pull our python docker image using the following:
 
 ```
@@ -131,15 +130,15 @@ are welcome to develop in any of them. To access the image use:
 docker run --name 'my_container' --rm -i -t wsmorgan/python bash
 ```
 
-Where the 'my_container' variable has be replaced by a name you'll remember. This command creates a docker container with the name you
+Where the `my_container` variable has be replaced by a name you'll remember. This command creates a docker container with the name you
 specify and opens an interactive bash terminal of the docker
-image. The '--rm' flag means that when you exit the interactive
+image. The `--rm` flag means that when you exit the interactive
 terminal the container will also be deleted. We will be using this
 docker image through out the rest of this tutorial to run and test any
 code you write. You can even develop your code from this container,
 however, keep in mind that when you exit the container will be deleted
 and any code you have not pushed to GitHub will be lost (even without
-the '--rm' flag in the command you risk losing any code you wrote
+the `--rm` flag in the command you risk losing any code you wrote
 while in the container). I will assume that you will be producing code
 on your machine and that we will be transferring it to the container
 when tests need to be run.
@@ -177,23 +176,22 @@ The remaining instructions for this section can be found
 
 ## Continuous Integration, Code Coverage, and Quality
 
-Now that you have a working code base we want to ensure that it
+Now that you have a working code base, we want to ensure that it
 doesn't get messed up as you continue to develop and other people
-start to contribute to your project. One way to ensure that new code
-revisions don't break your codes functionality is Continuous
-Integration (CI). The idea is that every time anyone pushes to your
-git repository or creates a pull request the CI service will run all your
-unit tests and let you know if they still pass. The CI provider I'll
-cover here is called [Travis CI](https://travis-ci.org/).
+start to contribute to your project. Continuous
+Integration (CI) is an effective way to ensure that new code
+revisions don't break the current functionality. Every time someone pushes to your
+git repository, or creates a pull request, the CI service will run all your
+unit tests and let you know if they still pass. The CI provider we use is [Travis CI](https://travis-ci.org/).
 
 ### Continuous Integration, Travis CI
 
 The first thing you need to do is enable Travis CI to monitor your git
 repository and run unit tests when it detects a change. To do that go
 to: [https://travis-ci.org/](https://travis-ci.org/) and click on the
-'Sign in with GitHub' or 'Sign up' buttons (either will have the same
+'Sign in with GitHub' or 'Sign up' buttons. (Either will have the same
 effect. Once logged in the server should automatically start linking
-with GitHub and listing your repositories, if it doesn't go up to your
+with GitHub and listing your repositories. If it doesn't, go to your
 name in the top right corner and click on the accounts option that
 pops down.
 
@@ -285,7 +283,7 @@ repository from the list. Then next your repository name, in the
 middle of the screen, you will see the word `build` in a black box
 with another box next to it, click on the word build. A pop-up will
 open, from the second drop-down menu select Markdown then copy the text
-in the box at the bottom of the pop-up. Past that text to the top of
+in the box at the bottom of the pop-up. Paste that text to the top of
 your README.
 
 ### Code Coverage, Codecov
