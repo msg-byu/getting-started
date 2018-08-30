@@ -2,7 +2,7 @@
 This is a list of tasks for which you can earn a bonus. We decided in group meeting that each member should spend 1 hour/week 
 contributing to finishing something on this list.
 
-At first we talked about this being a *BATSU* list (Japanese for "lose" or "punishment") but I like a more positive approach. Let's think about rewards and contributions to the group good, rather than thinking about the fact that people don't want to do these...
+At first we talked about this being a 罰 (BATSU) list (Japanese for "lose" or "punishment") but I like a more positive approach. Let's think about rewards and contributions to the group good, rather than thinking about the fact that people don't want to do these...
 
 If there are items that you want added to this list, add them and then tell me what you think the bounty should be.
 
