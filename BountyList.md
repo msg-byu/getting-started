@@ -15,5 +15,6 @@ If there are items that you want added to this list, add them and then tell me w
 7. Add a unit test to cover [Issue #16](https://github.com/msg-byu/kgridGen/issues/16) (after it is fixed) ||$10||
 8. Make enhancements on getting started [Issue #10](https://github.com/msg-byu/getting-started/issues/10) ||$10||
 9. Unit tests for matdb ||$10/hour||
+10. Fix compile issue for plotting 2D enumerations in enumlib [Issue #35](https://github.com/msg-byu/enumlib/issues/35) ||$10||
 
 
