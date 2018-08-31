@@ -307,10 +307,10 @@ to get it going. Then in your other terminal use navigate to the
 folder your git repository is in and use:
 
 ```
-docker cp 'my_repo' my_pkg:.
+docker cp 'my_repo' my_container:.
 ```
 
-(where 'my_repo' is the repository file) to copy the repository into
+(where 'my_repo' is the repository file and my_container is the docker you just started) to copy the repository into
 the docker container. Now go back to the terminal that you used
 `docker run` in and type `ls`. You should now see your git
 repository. Now navigate into the folder `cd 'my_repo'` then enter
