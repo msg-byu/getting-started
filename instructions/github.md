@@ -74,7 +74,7 @@ to it. Open your terminal, or command
 prompt/[Cygwin](https://www.cygwin.com/) for windows, and use the `cd`
 command to move to a place on your system that you want to store your
 code (I would recommend making a separate directory for all your codes
-called codes).
+called codes). (If you don't know what the `cd` command means, click [here](https://github.com/yeward97/getting-started/blob/patch-2/instructions/UNIX.md) for a quick crash course.)
 
 Once you are in the desired location click the green 'Clone or
 download' button and copy the address it shows you. Then in the
