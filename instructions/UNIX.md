@@ -4,7 +4,7 @@ As previously mentioned, a lot of work in this team is done directly in the term
 
 ### pwd and ls
 
-`pwd` is quite straightforward. It stands for "print working directory and it tells you what folder you are currently in. `ls` stands for "list segments" and tells you all files and folders in the folder you are in. For example, if you were in your home folder, and you were to type:
+`pwd` is quite straightforward. It stands for "print working directory" and it tells you what folder you are currently in. `ls` stands for "list segments" and tells you all files and folders in the folder you are in. For example, if you were in your home folder, and you were to type:
 
 ```
 pwd
@@ -28,7 +28,7 @@ the terminal would return folders like:
 Documents Pictures  Desktop Downloads Music Videos
 ```
 
-Which you probably recognise as the folders you always see when you first open the file explorer application.
+Which you probably recognize as the folders you always see when you first open the file explorer application.
 
 ### cd
 
