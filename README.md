@@ -71,7 +71,7 @@ even if you are already familiar with the concepts.
 ## The Goal
 
 If you are interested in joining the group, download the one of the
-chapters of [Giordano's "Computational Physics"](http://msg.byu.edu/exercises/) book and use the problems
+chapters of [Giordano's "Computational Physics"](https://msg.byu.edu/giordano) book and use the problems
 in the book to practice the steps below.
 
 Your task, once you download the description of the example problems, is to code them up as
