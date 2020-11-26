@@ -106,7 +106,7 @@ This step selects files from `selected.cfg` to run in VASP. These will then be a
 
 #### MLIP: ERROR: Error reading .* file
 
-This error occurs when you have an input in an `mlp` command but the file it refers to is not there. For example, if you see `MLIP: ERROR: Error reading .mtp file`, then you're mtp file is missing.
+This error occurs when you have an input in an `mlp` command but the file it refers to is not there. For example, if you see `MLIP: ERROR: Error reading .mtp file`, then your mtp file is missing.
 
 ### Potential AutoGR Errors:
 
