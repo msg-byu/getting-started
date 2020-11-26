@@ -57,9 +57,9 @@ Calculates the MV Grade of `train.cfg` and sets up the `state.als` file. (Need m
 `unrelaxed.cfg_*`
 `selected.cfg_*`
 
-Note: The `_*` signifies that there will probably be multiple files, depending on the number of processes you are running the command with.
-[GLWH Nov 26 2020]
-For me the output files are B-*pre*selected.cfg_0. And watch out! If you run this command twice in a row, without deleting `B-preselected.cfg` it *appends* to the file. Gotcha!
+Note: The `_*` signifies that there will probably be multiple files, depending on the number of processes you are running the command with.  
+[GLWH Nov 26 2020]  
+For me the output files are B-*pre*selected.cfg_#. And watch out! If you run this command twice in a row, without deleting `B-preselected.cfg` it *appends* to the file. Gotcha!
 
 
 #### mlp Command
