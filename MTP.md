@@ -19,7 +19,7 @@
 
 #### Purpose
 
-Trains the potential in `curr.mtp` on the data in `train.cfg`.
+Trains the potential in `curr.mtp` on the data in `train.cfg`. [GLWH Nov 26 2020] In other words, this is the _fit_. This is the part a potential is fitted to the energies, forces, and stresses in a group of vasp calculations. 
 
 ### Calc Grade
 
@@ -41,7 +41,7 @@ Trains the potential in `curr.mtp` on the data in `train.cfg`.
 
 #### Purpose
 
-Calculates the MV Grade of `train.cfg` and sets up the `state.als` file. (Need more info here, as I'm not 100% sure why this step is necessary)
+Calculates the MV Grade of `train.cfg` and sets up the `state.als` file. [GLWH Nov 26 2020] The MV grade isn't needed. But the `als` file stores the active learning set.
 
 ### Relax
 
@@ -69,7 +69,7 @@ For me the output files are B-*pre*selected.cfg_#. And watch out! If you run thi
 #### Purpose
 
 This is sort of the heart of the MTP algorithm. It attempts to relax the structures in `catalog.cfg` to an equilibrium state.
-If it fails to do so,  within a certain tolerance of estimated error, the structures that break this tolerance are collected.
+If it fails to do so,  within a certain tolerance of estimated error, the structures that break this tolerance are collected. [GLWH Nov 26 2020] Some (or all of these _preselected_ structures will be added to the training set. This selection is done in the next step: select-add.
 
 ### Select Add
 
@@ -94,7 +94,7 @@ Note: `selected.cfg` is a concatenation of all `selected.cfg_*` from the previou
 
 #### Purpose
 
-This step selects files from `selected.cfg` to run in VASP. These will then be added to the training set and the process starts again.
+This step selects files from `selected.cfg` to run in VASP. These will then be added to the training set and the process starts again. 
 
 ## Errors Encountered when Training MTP's
 
