@@ -73,7 +73,7 @@ in the group are doing and will save time and energy for you later.
 
 ## The Goal
 
-If you are interested in joining the group, download the one of the
+If you are interested in joining the group, download one of the
 chapters of [Giordano's "Computational Physics"](https://msg.byu.edu/giordano) book and use the problems
 in the book to practice the steps below.
 
@@ -85,7 +85,7 @@ integration](https://en.wikipedia.org/wiki/Continuous_integration)
 coverage](https://en.wikipedia.org/wiki/Code_coverage), and [API
 documentation](https://en.wikipedia.org/wiki/Application_programming_interface). If
 you don't know what any of these things mean feel free to follow the
-links or sit tight---we'll be there soon. This things should become clear as we cover each topic
+links or sit tight---we'll be there soon. It should become clear as we cover each topic
 in this walk-through.
 
 In addition, you will be putting your code up on
