@@ -20,9 +20,6 @@ the small amounts of code suggested in the guide, we recommend strongly that you
 write it yourself to get practice. Don't just copy the existing
 files.
 
-We also recommend that you not skip any sections in this walk-through,
-even if you are already familiar with the concepts.
-
 Be sure not to skip any sections in this tutorial, even if you are already
 familiar with the concepts. It will help you understand what others
 in the group are doing and will save time and energy for you later.
