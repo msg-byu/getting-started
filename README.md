@@ -4,7 +4,7 @@ Welcome to the Materials Simulation Group(MSG)!
 
 This guide will help you get started with Python, Travis CI, Sphinx, 
 GitHub and general scientific computing. Whether you have previous programming
-experience or not, we'll cover the basics you need in this tutorial.
+experience or not, we'll cover the basics you need in the group.
 
 What follows is meant to be an introduction to the tools and skills
 you need to be an effective member of the MSG group and to become a
