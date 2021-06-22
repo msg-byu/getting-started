@@ -107,7 +107,7 @@ account and make a repository. The directions
 
 In this group we write most of our code in
 [python](https://www.python.org/). Python is a convenient programming language to work with, 
-but it is slower than some other languages. If we need the code to be faster we first 
+but it is slower than some other languages, so if we need the code to be faster we first 
 prototype it in python, and then code it in
 [fortran](https://en.wikipedia.org/wiki/Fortran). That being said we
 execute most of our code from the terminal;
