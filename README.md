@@ -157,7 +157,7 @@ with your scripts built into it.
 
 Before we even start to write our first program we need to get our
 python package setup properly. This will allow us to easily test our
-codes as we build them, a process called test driven development, and
+codes as we build them (a process called test driven development) and
 ensure the code behaves as we expect.
 
 ### Python Packages
