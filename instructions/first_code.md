@@ -47,7 +47,7 @@ The first thing inside the documentation is a
 brief description of what the function should do. After that the
 input, or arguments, of the function are listed below the `Args:`
 tag. Each argument is listed so that its name appears first, followed
-by it's type in parentheses. After the argument's type should follow a description of
+by its type in parentheses. After the argument's type should follow a description of
 what the argument is, i.e., a number to be squared, a list to be
 sorted, an instance of a class ..... Once all the arguments
 have been listed, the variables that the function returns also need
