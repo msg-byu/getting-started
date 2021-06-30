@@ -345,7 +345,7 @@ your problem and we'll get back to you ASAP.
 What you just did is install a local copy of your package. You only
 need to do this once per package because when you import this code into
 your docker container, you now have a live copy of your code on your machine. 
-Any changes you make to the code will effect the output immediately.
+Any changes you make to the code will affect the output immediately.
 Just remember that if you want to keep those changes, you will need to push them 
 to your github repository.
 
