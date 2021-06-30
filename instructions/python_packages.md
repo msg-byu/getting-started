@@ -20,7 +20,7 @@ pip install numpy
 ```
 
 in your docker terminal. This simple command installs the python
-package called numpy which contains almost every numerical tool you
+package called numpy, which contains almost every numerical tool you
 will ever need when you program. You can now access the numpy tools
 simply by using:
 
@@ -30,9 +30,9 @@ import numpy
 
 in any of your python scripts. Numpy, and many other packages, are
 available for anyone to use anywhere through the [python package
-index](https://pypi.python.org/pypi) (pypi). In this walk through we
+index](https://pypi.python.org/pypi) (pypi). In this walkthrough we
 will not be adding your package to the index, but if you build a code
-that you feel should be on the index then do so, instructions on how
+that you think should be on the index then do so, instructions on how
 to do that can be found
 [here](http://the-hitchhikers-guide-to-packaging.readthedocs.io/en/latest/contributing.html).
 
@@ -44,7 +44,7 @@ package name and create a folder in your repository with that
 name. This folder will contain all your python code for this
 project. By convention, python package names are usually lower case
 without spaces. You don't have to follow these conventions, but it is a
-good idea to keep them in mind in case you do submit a your package to
+good idea to keep them in mind in case you do submit a package to
 pypi. In the [sample
 repository](https://github.com/msg-byu/getting-started) the package
 name is `my_pkg` so the command would be:
@@ -58,10 +58,10 @@ to create a [setup.py](../setup.py) and
 [setup.cfg](../setup.cfg). These files tell `pip` how to install your
 package. You will find templates of both files in the sample
 repository. You should copy them to your repository so that they are
-on the same level as you package directory. You will also want to make
-a file `__init__.py` in the package folder, this file will remain
-empty during this walk through but it can be used to do some useful
-things shorten user imports or import tools for the entire
+on the same level as your package directory. You will also want to make
+a file `__init__.py` in the package folder. This file will remain
+empty during this walkthrough, but it can do some useful
+things like shorten user imports or import tools for the entire
 package. Examples of this can be found
 [here](https://github.com/wsmorgan/analyzefit/blob/master/analyzefit/__init__.py).
 
@@ -105,8 +105,8 @@ Here you enter the current distribution version of your code. The
 distribution version takes the form of a period separated list with
 entries of major revision, minor revision, and patch revisions. A major
 revision occurs when you change how your code works, that is if
-someone was using your code before the revision for a project and
-attempted to use it the same way afterwards the code would no longer
+someone was using your code for a project before the revision and
+attempted to use it the same way afterwards, the code would no longer
 function. A minor revision is a change in the public API, such as
 creating a new subroutine or function that is publicly available. The
 patch revisions are small changes to the code to fix issues and
@@ -160,7 +160,7 @@ install_requires = [
 
 You don't need to change anything here yet but you should be aware of
 this field. As you build your code you may find yourself making use of
-other python packages such as numpy or matplotlib (pythons plotting
+other python packages such as numpy or matplotlib (python's plotting
 package). Any packages your code needs in order to install and run
 properly should be listed here as a comma separated list and usually
 with each entry on a separate line. For example if matplotlib is being
@@ -191,7 +191,7 @@ This is another field that you can ignore for now but should be aware
 of. Any scripts, i.e., command line executable programs, you place in
 these brackets will get copied to your bin (the place on your computer
 where anything you can type into the terminal, like 'cp', lives). Only
-ever uncomment this line if you have a script to install, otherwise
+uncomment this line if you have a script to install, otherwise
 setup.py will fail.
 
 ```
@@ -289,12 +289,12 @@ def square(x):
 ```
 
 Here we have defined a function that squares a given value. The text
-inside of three quotes in this functions is
+inside of triple quotes in this function is
 [documentation](../README.md#your-first-code) which we go into in more
 detail later.
 
 Now that we have some code to test with we can install our package and
-insure that it functions properly. First we need to copy all our code
+ensure that it functions properly. First we need to copy all our code
 to our docker container. To do this you need your docker container
 running in one terminal while you use another to copy files to it. If
 your docker container is not running then use:
@@ -303,7 +303,7 @@ your docker container is not running then use:
 docker run --name my_container --rm -i -t wsmorgan/python bash
 ```
 
-to get it going. Then in your other terminal use navigate to the
+to get it going. Then in your other terminal navigate to the
 folder your git repository is in and use:
 
 ```
@@ -325,7 +325,7 @@ exit()
 ```
 
 You should have seen the number 4 printed to the screen before you
-typed `exit()`. If you didn't or any of these commands gave you errors
+typed `exit()`. If you didn't, or if any of these commands gave you errors,
 stop and go back through this setup to ensure that you have everything
 correct. If
 
@@ -343,9 +343,11 @@ here](https://github.com/msg-byu/getting-started/issues) describing
 your problem and we'll get back to you ASAP.
 
 What you just did is install a local copy of your package. You only
-need to do this once per package because the code python is importing
-is now the live version of your code on your machine. Any changes you
-make will effect the output immediately.
+need to do this once per package because when you import this code into
+your docker container, you now have a live copy of your code on your machine. 
+Any changes you make to the code will effect the output immediately.
+Just remember that if you want to keep those changes, you will need to push them 
+to your github repository.
 
 You have now successfully created your first python package. Please
 return to the main [walk through](../README.md#your-first-code).
