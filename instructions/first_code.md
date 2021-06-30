@@ -42,8 +42,8 @@ explain how it usually works.
 
 Documentation always starts with and ends with three double
 quotes and comes immediately after the definition of the function
-or class. Everything inside the triple quotes is also often referred to
-as a docstring. The first thing inside the documentation is a
+or class. This is also often referred to as a docstring. 
+The first thing inside the documentation is a
 brief description of what the function should do. After that the
 input, or arguments, of the function are listed below the `Args:`
 tag. Each argument is listed so that its name appears first, followed
