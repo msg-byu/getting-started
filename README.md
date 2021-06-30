@@ -195,13 +195,13 @@ The first thing you need to do is enable Travis CI to monitor your git
 repository and run unit tests when it detects a change. To do that go
 to: [https://travis-ci.org/](https://travis-ci.org/) and click on the
 'Sign in with GitHub' or 'Sign up' buttons. (Either will have the same
-effect. Once logged in the server should automatically start linking
+effect) Once logged in the server should automatically start linking
 with GitHub and listing your repositories. If it doesn't, go to your
 name in the top right corner and click on the accounts option that
 pops down.
 
 Once your account has synced with GitHub you should see the repository
-you created at the start of this project with grey box and `x` in a
+you created at the start of this project with a grey box and `x` in a
 square next to it. Click that box, it will turn blue and, the `x` will
 turn into a check and voila! You've enabled Travis CI to monitor and
 run the unit tests on your repository.
@@ -233,7 +233,7 @@ python:
 ```
 
 Inform Travis CI that you will be performing tests in the python 2.7
-and 3.4 environments, if these are not the python versions you want
+and 3.4 environments. If these are not the python versions you want
 Travis CI to run tests in then modify these lines to reflect the
 python versions you are testing your code in. The next lines tell
 Travis CI what it needs to install to run your tests:
@@ -246,16 +246,15 @@ install:
 
 The `pip install .` says to install the local python package once its
 been pulled to the server. Then Travis CI is told it needs to install
-tox to run the tests (`pip install tox`). This format assumes that
-everything your package, and its unit-tests, need to run are included
-in your [setup.py](instructions/python_packages.md#setuppy) file. If
-this is not the case you will need to list any additional dependencies
-for your package in a another file, usually called
-`requirements.txt`. The `requirements.txt` file lists each additional
-python package needed for your package, or its tests, on a separate
-line. For example, if your package needs numpy and scipy, and they
-aren't listed in your setup.py, then your `requirements.txt` file
-would look like:
+tox to run the tests (`pip install tox`). This format assumes that your 
+[setup.py](instructions/python_packages.md#setuppy) file includes 
+everything your package and unit tests need to run. If this is not 
+the case you will need to list any additional dependencies for your 
+package in another file, usually called `requirements.txt`. 
+The `requirements.txt` file lists each additional python package needed 
+for your package, or its tests, on a separate line. For example, if your 
+package needs numpy and scipy, and they aren't listed in your setup.py, 
+then your `requirements.txt` file would look like:
 
 ```
 numpy
@@ -295,8 +294,8 @@ your README.
 
 Code coverage is a report of how many lines of code your unit-tests
 cover. Your goal is to have 100% code coverage for any code you
-write. There is a caveat to this idea, there are times when you will
-write code that Travis CI cannot test, for example:
+write. However, there is a caveat to this idea as there are times when 
+you will write code that Travis CI cannot test, for example:
 
 ```
     def _run_from_ipython(self):
@@ -327,8 +326,8 @@ To make the reports produced by coverage easier to read we're going to
 use a service called [CodeCov](https://codecov.io/). Go to
 [https://codecov.io/](https://codecov.io/) and click `Sign up` then
 `sign up with GihHub`. Once inside navigate your way to your
-repositories list, it should be empty, then click `Add new
-repository`. A list of all your repositories should appear, click on
+repositories list, which should be empty, then click `Add new
+repository`. A list of all your repositories should appear; click on
 the repository you made for this project and a 2 step process will
 appear on the screen. Step one will have a token for you to copy. Go
 ahead and copy it, you can follow the link of examples in for
@@ -363,8 +362,8 @@ code is good quality. In other words, does our code follow standard
 style guidelines, does it have any sections that are likely to break or
 introduce bugs, is it easily readable.... Being able to produce good
 quality code will often set you apart as a programmer. There are a
-number of sites that perform code quality checks but we're going to
-talk about how to use only one of them,
+number of sites that perform code quality checks but we're only going to
+talk about how to use one of them,
 [Landscape](https://landscape.io/). Go to
 [https://landscape.io/](https://landscape.io/) and click `Sign in with
 GitHub`. On the next screen click `+ Add Repository` then from the
