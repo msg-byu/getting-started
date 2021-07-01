@@ -131,10 +131,10 @@ This image has working copies of python 2.7, 3.4, 3.5, and 3.6. You
 are welcome to develop in any of them. To access the image use this command:
 
 ```
-docker run --name 'container_name' --rm -i -t wsmorgan/python bash
+docker run --name 'my_container' --rm -i -t wsmorgan/python bash
 ```
 
-Replace the `container_name` variable with a name you'll remember (it's just a placeholder to show you the syntax). 
+Replace the `my_container` variable with a name you'll remember (it's just a placeholder to show you the syntax). 
 This command creates a docker container with the name you
 specify and opens an interactive bash terminal of the docker
 image. The `--rm` flag means that when you exit the interactive
@@ -356,14 +356,12 @@ text to the top of your README.md right after the build status badge.
 
 ### Code Quality, Landscape
 
-The last issue to be concerned with now that our code will be run
-through a CI server and we'll be receiving coverage reports is if our
-code is good quality. In other words, does our code follow standard
-style guidelines, does it have any sections that are likely to break or
-introduce bugs, is it easily readable.... Being able to produce good
-quality code will often set you apart as a programmer. There are a
-number of sites that perform code quality checks but we're only going to
-talk about how to use one of them,
+The last issue to be concerned with now is if our code is good quality. 
+In other words, does our code follow standard style guidelines, does it 
+have any sections that are likely to break or introduce bugs, is it easily 
+readable.... Being able to produce good quality code will often set you 
+apart as a programmer. There are a number of sites that perform code 
+quality checks but we're only going to talk about how to use one of them,
 [Landscape](https://landscape.io/). Go to
 [https://landscape.io/](https://landscape.io/) and click `Sign in with
 GitHub`. On the next screen click `+ Add Repository` then from the
@@ -417,8 +415,8 @@ sphinx-quickstart
 ```
 
 Sphinx will start and prompt you through questions. The first is
-asking you where you want the information sphinx makes for you to
-go. If directory doesn't exist sphinx can make it. Tell Sphinx to put
+asking you where you want to put the information sphinx makes for you. 
+If a directory doesn't exist sphinx can make it. Tell Sphinx to put
 the documentation in `docs` then press enter.
 
 Next is a question about how to construct the build directory. This
@@ -429,9 +427,9 @@ give it the appropriate entries (when it asks for project version use
 0.0 and 0.0.1 for the release).
 
 For the rest of the questions it's best to stick with Sphinx's default
-values for now, you can feel free to experiment with them later. There
-are 2 exceptions, The first is that you want to enable the sphinx
-autodoc extension. So when sphinx asks you `autodoc: automatically
+values for now; you can feel free to experiment with them later. There
+are 2 exceptions: The first is that you want to enable the sphinx
+autodoc extension. When sphinx asks you `autodoc: automatically
 insert docstrings from modules (y/n)` (this happens right after it
 asks about 'epub') type `y` for yes. The second is you want to create
 a .nojekyll file, this prompt will come up as `githubpages: create
@@ -478,14 +476,14 @@ cd docs
 make html
 ```
 
-There are many different options for building your API documentation,
+There are many different options for building your API documentation;
 for an example of a different setup see [aflow's docs
-folder](https://github.com/rosenbrockc/aflow/tree/master/docs), as you
+folder](https://github.com/rosenbrockc/aflow/tree/master/docs). As you
 get more experience you should experiment with what you want your
 documentation to look like. When the make has finished we're going to
 copy the entire project back over to your home machine. When you do
 this make sure you are in the directory that contains your GitHub
-repository's folder, in other words if use:
+repository's folder, in other words use:
 
 ```
 ls
@@ -505,7 +503,7 @@ docs. You can now open your documentation using:
 open 'get_repo/docs/_build/index.html
 ```
 
-If this doesn't work don't worry, we're going to make it so that
+If this doesn't work don't worry! We're going to make it so that
 anyone can view the nice API documentation that Sphinx built for you.
 
 ### GitHub Pages
@@ -543,19 +541,19 @@ git push
 ```
 
 GitHub will then prompt you for your user name and password. Now go
-back to your  and click on your github.io
+back to your github and click on your github.io
 repository. The changes you made on your local machine should now be
 there. What you just did was add all the files in your local copy of
 the repository to the git repository using `git add .` (you can also
 add files individually by listing them after the add keyword), then you
-committed them for a push using `git commit -m "Some message."` (the -m
+committed them for a push using `git commit -m "Some message explaining the changes made."` (the -m
 tells git that you have a message to add, if you don't use the -m then
 git will open an editor of some kind for you to add a message anyway),
 then finally you pushed the changes up to GitHub.
 
 Now to make your API documentation findable to the general public we
 want to add the following line to your 'README.md' file (it can go
-anywhere some developers put it at the bottom of the file some near
+anywhere, some developers put it at the bottom of the file some near
 the top, it's up to you):
 
 ```
@@ -563,7 +561,7 @@ Full API Documentation available at: [github pages](https://'your
 GitHub user name'.github.io/'my_pkg/).  
 ```
 
-Make sure that the project name matches the folder name your created
+Make sure that the project name matches the folder name you created
 in your github.io repository. With that addition your API documentation
 will be readable when you make a push at the end of the next section.
 
@@ -620,13 +618,13 @@ git push
 ```
 
 Now go to [GitHub](https://github.com/) and click on your project's
-repository. Since GitHub automatically takes you to the master branch
+repository. Since GitHub automatically takes you to the main branch
 nothing will look different. To see your changes click on the
-`Branch: master` button and select 'dev' from the drop-down menu. Now
-all your changes should be visible. To add these changes to your master
+`Branch: main` button and select 'dev' from the drop-down menu. Now
+all your changes should be visible. To add these changes to your main
 branch we're going to use a pull request. Near the top of the list of
 files for your repository there should be a line that says something
-like `this branch is 1 commit ahead of master` then a button that says
+like `this branch is 1 commit ahead of main` then a button that says
 'new pull request'. Click the button, on the next page find the
 button that says `create pull request`. Now we wait. Come back to your
 repository in 10-15 minutes and click on the pull request tab near the
@@ -637,7 +635,7 @@ initial run but that's okay) then push `merge pull request` otherwise
 wait a few more minutes and check again.
 
 Once you've merged the pull request you should see three badges appear
-on your repositories README If any of them don't have the word
+on your repository's README. If any of them don't have the word
 'passing' or '100%' in them then figure out why and fix them.
 
 The beauty of this approach is that it enables you to use services
