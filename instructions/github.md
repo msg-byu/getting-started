@@ -17,14 +17,14 @@ code that is being developed. It makes it easy to share code with
 people around the world. Most, if not all, of the code you write as
 part of this group will be maintained on GitHub so learning git will
 be an important in your development. You will use git in the terminal
-to interact with GitHub one you are setup.
+to interact with GitHub once you are setup.
 
 ## Create a Repository
 
 To make a GitHub account go to [GitHub](https://github.com/), click
 sign up for GitHub, and create your user name and password. Once you
 have logged into GitHub, create a new repository by clicking on the
-plus sign on the top right of the window and clicking on 'Now repository'
+plus sign on the top right of the window and clicking on 'New repository'
 from the drop-down menu. You now need to give the repository a name.
 You can give it any name you’d like, but I would recommend titling it
 something related to the exercise you've been given by Dr. Hart. You
@@ -50,8 +50,8 @@ create for the exercise you have been assigned.
 GitHub not only hosts your code but it will allow you to maintain
 multiple versions of your code at the same time. This is extremely
 useful when trying to maintain a working and stable code system. For
-example lets say you, or someone you collaborate with, are working on
-adding new functionality to a code you wrote but accidently introduced
+example let's say you, or someone you collaborate with, are working on
+adding new functionality to a code you wrote but accidentally introduced
 a bug into the code. If you push, git's way of updating the repository
 in the server, to the live code copy then anyone who tries to use the
 code will experience the bug. That is why it is always a good idea to
@@ -62,7 +62,7 @@ to merge the changes into your main repository.
 
 To help you get into the habit of working on a development branch
 let's create one for your new repository. On the repository home page
-you should see a button labeled `Branch: master`. Click on it and in
+you should see a button labeled `Branch: main`. Click on it and in
 the text field type the word 'dev'. You should then see new box show
 up saying `Create branch dev`. Click on it. You have now created a
 development branch to work in.
@@ -73,8 +73,8 @@ We will now copy this repository to your local machine so you can add
 to it. Open your terminal, or command
 prompt/[Cygwin](https://www.cygwin.com/) for windows, and use the `cd`
 command to move to a place on your system that you want to store your
-code (I would recommend making a separate directory for all your codes
-called codes). (If you don't know what the `cd` command means, click [here](https://github.com/yeward97/getting-started/blob/patch-2/instructions/UNIX.md) for a quick crash course.)
+code (I would recommend making a separate directory called codes for 
+all your codes). (If you don't know what the `cd` command means, click [here](https://github.com/yeward97/getting-started/blob/patch-2/instructions/UNIX.md) for a quick crash course.)
 
 Once you are in the desired location click the green 'Clone or
 download' button and copy the address it shows you. Then in the
@@ -105,7 +105,7 @@ git checkout dev
 ```
 
 We are now working on the dev branch and anything we commit will be
-pushed to dev instead of master creating a stable code base.
+pushed to dev instead of main creating a stable code base.
 
-You are now ready to return to the remainder of the walkthrogh found
+You are now ready to return to the remainder of the walkthrough found
 [here](../README.md#python).
